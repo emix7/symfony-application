@@ -15,6 +15,6 @@
     <h1>{{ article.title }}</h1>
     {{ article.content|raw }}
     <p>{% thumbnail article.translatable.image, 'big' %}</p>
-    <a href="{{ path('endroid_news_article_index') }}">Terug naar het nieuwsoverzicht</a>
+    <a href="{{ path('endroid_news_article_index') }}">{{ 'back'|trans }}</a>
 
 {% endblock content %}

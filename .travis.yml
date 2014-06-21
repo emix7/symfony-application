@@ -34,7 +34,6 @@ before_script:
     - composer update doctrine/mongodb-odm jmikola/geojson --prefer-source --no-interaction
     - app/console doctrine:database:create --env=test > /dev/null
     - app/console doctrine:schema:create --env=test > /dev/null
-    - app/console doctrine:phpcr:repository:init --env=test > /dev/null
     - app/console cache:warmup --env=test > /dev/null
     - sh -e /etc/init.d/xvfb start
     - export DISPLAY=:99

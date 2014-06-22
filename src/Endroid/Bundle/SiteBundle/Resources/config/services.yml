@@ -4,3 +4,7 @@ services:
         class: Endroid\Bundle\SiteBundle\Service\RouteProvider
         tags:
             -  { name: endroid_route.provider }
+
+    endroid_site.create.object_mapper:
+        class: Midgard\CreatePHP\Mapper\DoctrineOrmMapper
+        arguments: [ cmf_create.map, @doctrine, null]

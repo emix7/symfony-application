@@ -18,6 +18,8 @@
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
             {% endstylesheets %}
 
+            {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+
         {% endblock head %}
 
         {{ google_analytics_tracker('default') }}
@@ -82,6 +84,8 @@
             %}
             <script src="{{ asset_url }}" type="text/javascript"></script>
             {% endjavascripts %}
+
+            {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale})) %}
 
         {% endblock body %}
 

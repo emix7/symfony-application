@@ -15,7 +15,6 @@ framework:
     validation:      { enable_annotations: true }
     templating:
         engines: ['twig']
-        assets_version: 1.0.0
     default_locale:  "%locale%"
     trusted_proxies: ~
     session:         ~
@@ -38,7 +37,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ EndroidSiteBundle ]
+    bundles:        [ EndroidSiteBundle, CmfCreateBundle ]
     java:           /usr/bin/java
     filters:
         cssrewrite: ~
@@ -245,3 +244,13 @@ snc_redis:
             alias: default
             dsn: redis://localhost
             logging: %kernel.debug%
+
+cmf_create:
+    security:
+        role: ROLE_USER
+        checker_service: ~
+    object_mapper_service_id: endroid_site.create.object_mapper
+    persistence:
+        phpcr:
+            enabled: false
+            manager_name: ~

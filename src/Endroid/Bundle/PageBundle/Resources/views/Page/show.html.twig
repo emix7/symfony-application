@@ -12,13 +12,15 @@
 
 {% block content %}
 
-    <h1>{{ page.title }}</h1>
-    {{ page.content|raw }}
+    {% createphp page as="rdf" noautotag %}
+        <div {{ createphp_attributes(rdf) }}>
+            <h1 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h1>
+            <div {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</div>
+        </div>
+    {% endcreatephp %}
 
     {% if page.form %}
-
         {{ show_form(page.form.id) }}
-
     {% endif %}
 
 {% endblock content %}

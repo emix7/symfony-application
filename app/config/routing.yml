@@ -63,3 +63,6 @@ _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
+
+create:
+    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"

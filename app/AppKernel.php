@@ -42,6 +42,7 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
+            new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
 
             // Project specific bundles
             new Endroid\Bundle\AdminBundle\EndroidAdminBundle(),

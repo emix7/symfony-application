@@ -5,6 +5,7 @@
 [![Total Downloads](https://poser.pugx.org/endroid/symfony-application/downloads.png)](https://packagist.org/packages/endroid/symfony-application)
 [![Build Status](https://travis-ci.org/endroid/symfony-application.png?branch=master)](https://travis-ci.org/endroid/symfony-application)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/endroid/symfony-application/badges/quality-score.png?s=0cb8f00fa293d34f949493bb755454690cfeb43c)](https://scrutinizer-ci.com/g/endroid/symfony-application/)
+[![Dependency Status](https://www.versioneye.com/user/projects/53ac8f98d043f9b1d4000042/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53ac8f98d043f9b1d4000042)
 
 Use this project if you want to quickly set up a basis for your web application. This application
 is built on [`endroid/symfony-standard`](https://github.com/symfony/symfony-standard) and extended

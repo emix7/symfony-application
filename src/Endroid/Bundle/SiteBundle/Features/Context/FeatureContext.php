@@ -2,7 +2,7 @@
 
 namespace Endroid\Bundle\SiteBundle\Features\Context;
 
-use Endroid\Bundle\RestBundle\Command\CreateClientCommand;
+use Endroid\Bundle\OAuthBundle\Command\CreateClientCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\HttpKernel\KernelInterface;

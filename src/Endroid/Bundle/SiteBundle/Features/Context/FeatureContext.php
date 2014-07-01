@@ -71,8 +71,8 @@ class FeatureContext extends RawMinkContext implements KernelAwareInterface
 
         $result = $output->fetch();
 
-        $this->clientId = preg_replace('#.*public id ([0-9]+_[a-z0-9]+).*#is', '$1', $result);
-        $this->clientSecret = preg_replace('#.*secret ([a-z0-9]+).*#is', '$1', $result);
+        $this->clientId = preg_replace('#.*Client ID: ([0-9]+_[a-z0-9]+).*#is', '$1', $result);
+        $this->clientSecret = preg_replace('#.*Client secret: ([a-z0-9]+).*#is', '$1', $result);
 
         if (!$this->clientId || !$this->clientSecret) {
             throw new \Exception('No valid client id and / or secret returned');

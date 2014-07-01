@@ -7,7 +7,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Bundle\RestBundle\Command;
+namespace Endroid\Bundle\OAuthBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputOption;
@@ -16,10 +16,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateClientCommand extends ContainerAwareCommand
 {
+    /**
+     * Configures the command.
+     */
     protected function configure()
     {
         $this
-            ->setName('endroid:oauth-server:client:create')
+            ->setName('endroid:api:client:create')
             ->setDescription('Creates a new client')
             ->addOption(
                 'redirect-uri',
@@ -35,16 +38,16 @@ class CreateClientCommand extends ContainerAwareCommand
                 'Sets allowed grant type for client. Use this option multiple times to set multiple grant types..',
                 null
             )
-            ->setHelp(
-                <<<EOT
-                    The <info>%command.name%</info>command creates a new client.
-
-<info>php %command.full_name% [--redirect-uri=...] [--grant-type=...] name</info>
-
-EOT
-            );
+            ->setHelp('The <info>%command.name%</info> command creates a new client.');
     }
 
+    /**
+     * Executes the command.
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $clientManager = $this->getContainer()->get('fos_oauth_server.client_manager.default');
@@ -54,7 +57,7 @@ EOT
         $clientManager->updateClient($client);
         $output->writeln(
             sprintf(
-                'Added a new client with public id <info>%s</info>, secret <info>%s</info>',
+                "Client ID: <info>%s</info>\nClient secret: <info>%s</info>",
                 $client->getPublicId(),
                 $client->getSecret()
             )

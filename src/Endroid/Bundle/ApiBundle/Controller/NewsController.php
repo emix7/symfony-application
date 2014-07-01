@@ -7,7 +7,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Bundle\RestBundle\Controller;
+namespace Endroid\Bundle\ApiBundle\Controller;
 
 use Endroid\Bundle\NewsBundle\Model\ArticleInterface;
 use FOS\RestBundle\Controller\Annotations;
@@ -15,7 +15,7 @@ use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class NewsArticleController extends FOSRestController
+class NewsController extends FOSRestController
 {
     /**
      * Get single Article.

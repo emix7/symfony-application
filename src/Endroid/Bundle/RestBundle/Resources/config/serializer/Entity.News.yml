@@ -1,5 +1,0 @@
-Endroid\Bundle\NewsBundle\Entity\Article:
-    exclusion_policy: ALL
-    properties:
-        id:
-            expose: true

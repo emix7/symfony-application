@@ -7,62 +7,61 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Bundle\RestBundle\Controller;
+namespace Endroid\Bundle\ApiBundle\Controller;
 
-use Endroid\Bundle\UserBundle\Entity\User;
-use Endroid\Bundle\UserBundle\Model\UserInterface;
+use Endroid\Bundle\PageBundle\Model\PageInterface;
 use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class UserController extends FOSRestController
+class PageController extends FOSRestController
 {
     /**
-     * Get single User.
+     * Get single Page.
      *
      * @ApiDoc(
      *   resource = true,
-     *   description = "Gets a User for a given id",
-     *   output = "Endroid\Bundle\UserBundle\Entity\User",
+     *   description = "Gets a Page for a given id",
+     *   output = "Endroid\Bundle\PageBundle\Entity\Page",
      *   statusCodes = {
      *     200 = "Returned when successful",
-     *     404 = "Returned when the user is not found"
+     *     404 = "Returned when the page is not found"
      *   }
      * )
      *
-     * @Annotations\View(templateVar="user")
+     * @Annotations\View(templateVar="page")
      *
-     * @param int $id the user id
+     * @param int $id the page id
      *
      * @return array
      *
-     * @throws NotFoundHttpException when user not exist
+     * @throws NotFoundHttpException when page not exist
      */
-    public function getUserAction($id)
+    public function getPageAction($id)
     {
-        $user = $this->getOr404($id);
+        $page = $this->getOr404($id);
 
-        return $user;
+        return $page;
     }
 
     /**
-     * Fetch a User or throw an 404 Exception.
+     * Fetch a Page or throw an 404 Exception.
      *
      * @param mixed $id
      *
-     * @return UserInterface
+     * @return PageInterface
      *
      * @throws NotFoundHttpException
      */
     protected function getOr404($id)
     {
-        $user = $this->container->get('endroid_user.user.handler')->get($id);
+        $page = $this->container->get('endroid_page.page.handler')->get($id);
 
-        if (!$user instanceof UserInterface) {
+        if (!$page instanceof PageInterface) {
             throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$id));
         }
 
-        return $user;
+        return $page;
     }
 }

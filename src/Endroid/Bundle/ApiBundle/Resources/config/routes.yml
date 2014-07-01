@@ -1,0 +1,10 @@
+endroid_api_news:
+    resource:     "Endroid\\Bundle\\ApiBundle\\Controller\\NewsController"
+    type:         rest
+    name_prefix:  api_
+
+endroid_api_page:
+    resource:     "Endroid\\Bundle\\ApiBundle\\Controller\\PageController"
+    type:         rest
+    name_prefix:  api_
+

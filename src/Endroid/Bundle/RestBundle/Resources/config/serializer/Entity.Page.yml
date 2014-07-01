@@ -1,5 +1,0 @@
-Endroid\Bundle\PageBundle\Entity\Page:
-    exclusion_policy: ALL
-    properties:
-        id:
-            expose: true

@@ -6,8 +6,8 @@ endroid_news:
     type:       annotation
     prefix:     /news
 
-endroid_rest:
-    resource:   "@EndroidRestBundle/Resources/config/routes.yml"
+endroid_api:
+    resource:   "@EndroidApiBundle/Resources/config/routes.yml"
     type:       rest
     prefix:     /api
     options:    { i18n: false }

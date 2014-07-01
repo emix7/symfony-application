@@ -1,0 +1,5 @@
+Endroid\Bundle\NewsBundle\Entity\Article:
+    exclusion_policy: none
+    properties:
+        translatable:
+            exclude: true

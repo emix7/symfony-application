@@ -46,13 +46,14 @@ class AppKernel extends Kernel
 
             // Project specific bundles
             new Endroid\Bundle\AdminBundle\EndroidAdminBundle(),
+            new Endroid\Bundle\ApiBundle\EndroidApiBundle(),
             new Endroid\Bundle\BehaviorBundle\EndroidBehaviorBundle(),
             new Endroid\Bundle\GoogleAnalyticsBundle\EndroidGoogleAnalyticsBundle(),
             new Endroid\Bundle\MediaBundle\EndroidMediaBundle(),
             new Endroid\Bundle\MenuBundle\EndroidMenuBundle(),
             new Endroid\Bundle\NewsBundle\EndroidNewsBundle(),
+            new Endroid\Bundle\OAuthBundle\EndroidOAuthBundle(),
             new Endroid\Bundle\PageBundle\EndroidPageBundle(),
-            new Endroid\Bundle\RestBundle\EndroidRestBundle(),
             new Endroid\Bundle\RouteBundle\EndroidRouteBundle(),
             new Endroid\Bundle\SearchBundle\EndroidSearchBundle(),
             new Endroid\Bundle\SiteBundle\EndroidSiteBundle(),

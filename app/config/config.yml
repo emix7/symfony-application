@@ -212,13 +212,13 @@ jms_serializer:
         directories:
             news:
                 namespace_prefix: "Endroid\\Bundle\\NewsBundle"
-                path: "@EndroidRestBundle/Resources/config/serializer"
+                path: "@EndroidNewsBundle/Resources/config/serializer"
             page:
                 namespace_prefix: "Endroid\\Bundle\\PageBundle"
-                path: "@EndroidRestBundle/Resources/config/serializer"
+                path: "@EndroidPageBundle/Resources/config/serializer"
             user:
                 namespace_prefix: "Endroid\\Bundle\\UserBundle"
-                path: "@EndroidRestBundle/Resources/config/serializer"
+                path: "@EndroidUserBundle/Resources/config/serializer"
 
 nelmio_api_doc:
     name: Symfony Application API
@@ -230,10 +230,10 @@ nelmio_api_doc:
 
 fos_oauth_server:
     db_driver:            orm
-    client_class:         Endroid\Bundle\RestBundle\Entity\Client
-    access_token_class:   Endroid\Bundle\RestBundle\Entity\AccessToken
-    refresh_token_class:  Endroid\Bundle\RestBundle\Entity\RefreshToken
-    auth_code_class:      Endroid\Bundle\RestBundle\Entity\AuthCode
+    client_class:         Endroid\Bundle\OAuthBundle\Entity\Client
+    access_token_class:   Endroid\Bundle\OAuthBundle\Entity\AccessToken
+    refresh_token_class:  Endroid\Bundle\OAuthBundle\Entity\RefreshToken
+    auth_code_class:      Endroid\Bundle\OAuthBundle\Entity\AuthCode
     service:
         user_provider:    fos_user.user_manager
 

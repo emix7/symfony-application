@@ -6,7 +6,7 @@ In order to connect to the REST API you need to create an OAuth client. This
 can be achieved by running the following command. After running this command
 you are presented the Oauth client ID and secret.
 
-    php app/console endroid:oauth-server:client:create --grant-type="client_credentials"
+    php app/console endroid:api:client:create --grant-type="client_credentials"
 
 ## Authentication
 

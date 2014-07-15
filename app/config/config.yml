@@ -190,6 +190,7 @@ fos_rest:
         view_response_listener: 'force'
         formats:
             json: true
+            xml: true
         templating_formats:
             html: true
 #    format_listener:

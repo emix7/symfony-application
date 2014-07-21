@@ -32,7 +32,7 @@
         "phpword/phpword": "dev-master",
         "knplabs/knp-snappy-bundle": "~1.0",
         "stfalcon/tinymce-bundle": "~0.2",
-        "friendsofsymfony/elastica-bundle": "~2.1",
+        "friendsofsymfony/elastica-bundle": "~3.0",
         "friendsofsymfony/rest-bundle": "~1.1",
         "knplabs/knp-paginator-bundle": "~2.3@dev",
         "knplabs/knp-components": "~1.2@dev",
@@ -96,7 +96,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "2.5-dev"
         }
     }
 }

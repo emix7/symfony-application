@@ -8,6 +8,7 @@ php:
 services:
     - mongodb
     - elasticsearch
+    - redis-server
 
 before_install:
     - sudo apt-get update > /dev/null

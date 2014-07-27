@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "e2b54ba99034cd660e6783da505738af",
+    "hash": "d49f888d8bbc7494962bcf866a89fdd5",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1019,16 +1020,16 @@
         },
         {
             "name": "friendsofsymfony/elastica-bundle",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSElasticaBundle.git",
-                "reference": "d88d96bf55a1ba6b603d429d9bf6a217d945b1c5"
+                "reference": "9fbc622929c1ce4461a945277dc4566768a13975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/d88d96bf55a1ba6b603d429d9bf6a217d945b1c5",
-                "reference": "d88d96bf55a1ba6b603d429d9bf6a217d945b1c5",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/9fbc622929c1ce4461a945277dc4566768a13975",
+                "reference": "9fbc622929c1ce4461a945277dc4566768a13975",
                 "shasum": ""
             },
             "require": {
@@ -1083,17 +1084,16 @@
                     "email": "tim@nagel.com.au"
                 },
                 {
-                    "name": "Jeremy Mikola",
-                    "email": "jmikola@gmail.com",
-                    "homepage": "http://jmikola.net"
-                },
-                {
                     "name": "Richard Miller",
                     "email": "richard.miller@limethinking.co.uk"
                 },
                 {
                     "name": "FriendsOfSymfony Community",
                     "homepage": "https://github.com/FriendsOfSymfony/FOSElasticaBundle/contributors"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
                 }
             ],
             "description": "Elasticsearch PHP integration for your Symfony2 project using Elastica",
@@ -1106,7 +1106,7 @@
                 "propel",
                 "search"
             ],
-            "time": "2014-07-04 12:10:24"
+            "time": "2014-07-23 10:06:33"
         },
         {
             "name": "friendsofsymfony/oauth-server-bundle",
@@ -2617,16 +2617,16 @@
         },
         {
             "name": "kriswallsmith/buzz",
-            "version": "v0.10",
+            "version": "v0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/Buzz.git",
-                "reference": "759432d66387e3433d3b06cb6f773b97225b9b17"
+                "reference": "a0f207ac4939978b604be9bec5d5b19baecd8165"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/759432d66387e3433d3b06cb6f773b97225b9b17",
-                "reference": "759432d66387e3433d3b06cb6f773b97225b9b17",
+                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/a0f207ac4939978b604be9bec5d5b19baecd8165",
+                "reference": "a0f207ac4939978b604be9bec5d5b19baecd8165",
                 "shasum": ""
             },
             "require": {
@@ -2661,7 +2661,7 @@
                 "curl",
                 "http client"
             ],
-            "time": "2013-05-19 03:41:15"
+            "time": "2014-03-24 21:56:09"
         },
         {
             "name": "lightopenid/lightopenid",
@@ -4969,20 +4969,21 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "98e197da54df1f966dd5e8a4992135703569c987"
+                "reference": "d4d85d6055b87f394d941b45ddd3a9173e1e3d2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/98e197da54df1f966dd5e8a4992135703569c987",
-                "reference": "98e197da54df1f966dd5e8a4992135703569c987",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/d4d85d6055b87f394d941b45ddd3a9173e1e3d2a",
+                "reference": "d4d85d6055b87f394d941b45ddd3a9173e1e3d2a",
                 "shasum": ""
             },
             "require": {
+                "ext-intl": "*",
                 "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
@@ -5013,7 +5014,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-10-04 10:06:38"
+            "time": "2014-07-25 09:58:17"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -6346,12 +6347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "294cfcc2c4a23f6f22f55f48dd885a40b441d4ac"
+                "reference": "06b52bc7ab811153da97d2edd9d94e1d60b60190"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/294cfcc2c4a23f6f22f55f48dd885a40b441d4ac",
-                "reference": "294cfcc2c4a23f6f22f55f48dd885a40b441d4ac",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/06b52bc7ab811153da97d2edd9d94e1d60b60190",
+                "reference": "06b52bc7ab811153da97d2edd9d94e1d60b60190",
                 "shasum": ""
             },
             "require": {
@@ -6377,7 +6378,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -6411,7 +6412,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2014-07-02 12:25:38"
+            "time": "2014-07-27 10:44:23"
         },
         {
             "name": "phpspec/prophecy",
@@ -7132,6 +7133,7 @@
         "fp/lightopenid": 20,
         "phpspec/phpspec": 20
     },
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"
     },

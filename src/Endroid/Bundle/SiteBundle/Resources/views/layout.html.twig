@@ -9,16 +9,20 @@
 
             <title>{% block title %}Symfony Application{% endblock %}</title>
 
-            {% stylesheets
-                'bundles/endroidsite/css/bootstrap.min.css'
-                'bundles/endroidsite/css/main.css'
-                    filter='cssrewrite,?yui_css'
-                    output='compiled/main.css'
-            %}
-            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
-            {% endstylesheets %}
+            {% block stylesheets %}
 
-            {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+                {% stylesheets
+                    'bundles/endroidsite/css/bootstrap.min.css'
+                    'bundles/endroidsite/css/main.css'
+                        filter='cssrewrite,?yui_css'
+                        output='compiled/main.css'
+                %}
+                <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+                {% endstylesheets %}
+
+                {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+
+            {% endblock stylesheets %}
 
         {% endblock head %}
 
@@ -75,17 +79,21 @@
                 </footer>
             </div>
 
-            {% javascripts
-                'bundles/endroidsite/js/jquery.min.js'
-                'bundles/endroidsite/js/bootstrap.min.js'
-                'bundles/endroidsite/js/main.js'
-                    filter='?yui_js'
-                    output='compiled/main.js'
-            %}
-            <script src="{{ asset_url }}" type="text/javascript"></script>
-            {% endjavascripts %}
+            {% block javascripts %}
 
-            {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale})) %}
+                {% javascripts
+                    'bundles/endroidsite/js/jquery.min.js'
+                    'bundles/endroidsite/js/bootstrap.min.js'
+                    'bundles/endroidsite/js/main.js'
+                        filter='?yui_js'
+                        output='compiled/main.js'
+                %}
+                <script src="{{ asset_url }}" type="text/javascript"></script>
+                {% endjavascripts %}
+
+                {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale})) %}
+
+            {% endblock javascripts %}
 
         {% endblock body %}
 

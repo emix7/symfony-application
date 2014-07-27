@@ -74,4 +74,32 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+    /**
+     * Write cache to memory to speed up development environment.
+     *
+     * @return string
+     */
+    public function getCacheDir()
+    {
+        if (in_array($this->environment, array('dev', 'test'))) {
+            return '/dev/shm/appname/cache/' .  $this->environment;
+        }
+
+        return parent::getCacheDir();
+    }
+
+    /**
+     * Write log to memory to speed up development environment.
+     *
+     * @return string
+     */
+    public function getLogDir()
+    {
+        if (in_array($this->environment, array('dev', 'test'))) {
+            return '/dev/shm/appname/logs';
+        }
+
+        return parent::getLogDir();
+    }
 }

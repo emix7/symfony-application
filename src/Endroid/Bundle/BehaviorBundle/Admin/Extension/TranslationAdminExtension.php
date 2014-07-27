@@ -48,12 +48,18 @@ class TranslationAdminExtension extends AdminExtension implements ContainerAware
      */
     public function configureListFields(ListMapper $listMapper)
     {
+        $twigGlobals = $this->container->get('twig')->getGlobals();
+
+        // Only show translations when at least two locales are available
+        if (!isset($twigGlobals['locales']) || count($twigGlobals['locales']) < 2) {
+            return;
+        }
+
         $listMapper
             ->add('translations', 'string', array(
                 'label' => 'admin.behavior.translatable.translations',
                 'template' => 'EndroidBehaviorBundle:Admin:translations.html.twig'
-            ))
-        ;
+            ));
     }
 
     /**

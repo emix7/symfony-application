@@ -868,17 +868,17 @@
         },
         {
             "name": "endroid/google-analytics-bundle",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "target-dir": "Endroid/Bundle/GoogleAnalyticsBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/endroid/EndroidGoogleAnalyticsBundle.git",
-                "reference": "4ff334c4f9017fd99b54f07cd05869acd09bea00"
+                "reference": "de19902e04fc197a7ff0883116c38fd90e2bf241"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/endroid/EndroidGoogleAnalyticsBundle/zipball/4ff334c4f9017fd99b54f07cd05869acd09bea00",
-                "reference": "4ff334c4f9017fd99b54f07cd05869acd09bea00",
+                "url": "https://api.github.com/repos/endroid/EndroidGoogleAnalyticsBundle/zipball/de19902e04fc197a7ff0883116c38fd90e2bf241",
+                "reference": "de19902e04fc197a7ff0883116c38fd90e2bf241",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
                 "google",
                 "symfony"
             ],
-            "time": "2013-12-24 12:12:00"
+            "time": "2014-07-27 17:27:22"
         },
         {
             "name": "fp/lightopenid",
@@ -6343,16 +6343,16 @@
         },
         {
             "name": "phpspec/phpspec",
-            "version": "dev-master",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "06b52bc7ab811153da97d2edd9d94e1d60b60190"
+                "reference": "61712147412cb647b6cb68b19833a60bfda759a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/06b52bc7ab811153da97d2edd9d94e1d60b60190",
-                "reference": "06b52bc7ab811153da97d2edd9d94e1d60b60190",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/61712147412cb647b6cb68b19833a60bfda759a1",
+                "reference": "61712147412cb647b6cb68b19833a60bfda759a1",
                 "shasum": ""
             },
             "require": {
@@ -6378,7 +6378,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -6412,7 +6412,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2014-07-27 10:44:23"
+            "time": "2014-07-01 14:09:19"
         },
         {
             "name": "phpspec/prophecy",

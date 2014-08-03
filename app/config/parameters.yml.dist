@@ -20,3 +20,4 @@ parameters:
     wkhtmltoimage_path:         /usr/local/bin/wkhtmltoimage
     google_analytics_tracker:   ~
     search_index:               default
+    redis_prefix:               ~

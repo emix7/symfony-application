@@ -60,6 +60,8 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+        metadata_cache_driver: redis
+        query_cache_driver: redis
         filters:
             publishable:
                 class:   Endroid\Bundle\BehaviorBundle\Filter\PublishableFilter
@@ -244,11 +246,15 @@ snc_redis:
             type: predis
             alias: default
             dsn: redis://localhost
+            options:
+                prefix: %redis_prefix%
             logging: %kernel.debug%
         cache:
             type: predis
             alias: cache
             dsn: redis://localhost/1
+            options:
+                prefix: %redis_prefix%
             logging: false
     session:
         client: default

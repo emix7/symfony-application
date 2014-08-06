@@ -21,3 +21,4 @@ parameters:
     google_analytics_tracker:   ~
     search_index:               default
     redis_prefix:               ~
+    whitelist:                  ~

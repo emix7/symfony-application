@@ -86,7 +86,7 @@ class TranslationAdminExtension extends AdminExtension implements ContainerAware
             }
             $translatable = $this->container->get('doctrine')->getRepository($translatableClass)->findOneById($translatableId);
             if ($translatable === null) {
-                $translatable = new $translatableClass;
+                $translatable = new $translatableClass();
             }
             $object->setTranslatable($translatable);
         }

@@ -15,6 +15,7 @@ use FOS\UserBundle\Entity\UserManager as FOSUserManager;
 use FOS\UserBundle\Util\TokenGenerator;
 use Fp\OpenIdBundle\Security\Core\User\UserManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 
 class UserManager extends FOSUserManager implements UserManagerInterface, ContainerAwareInterface
 {
@@ -23,9 +24,10 @@ class UserManager extends FOSUserManager implements UserManagerInterface, Contai
     /**
      * Creates a new user from the OpenID login.
      *
-     * @param  string        $identity
-     * @param  array         $attributes
+     * @param  string                   $identity
+     * @param  array                    $attributes
      * @return UserInterface
+     * @throws UnsupportedUserException
      */
     public function createUserFromIdentity($identity, array $attributes = array())
     {
@@ -35,15 +37,43 @@ class UserManager extends FOSUserManager implements UserManagerInterface, Contai
             return $user;
         }
 
+        $address = $attributes['contact/email'];
+        $domain = substr($address, strpos($address, '@') + 1);
+
+        $groupNames = array();
+        $whitelist = $this->container->getParameter('endroid_user.whitelist');
+        foreach ($whitelist as $entry) {
+            switch ($entry['type']) {
+                case 'domain':
+                    if ($entry['match'] == $domain) {
+                        $groupNames = array_merge($groupNames, $entry['groups']);
+                    }
+                    break;
+                case 'address':
+                    if ($entry['match'] == $address) {
+                        $groupNames = array_merge($groupNames, $entry['groups']);
+                    }
+                    break;
+            }
+        }
+
+        $groupNames = array_unique($groupNames);
+
+        if (count($groupNames) == 0) {
+            throw new UnsupportedUserException('Bad credentials');
+        }
+
         $user = new User();
-        $user->setUsername($attributes['contact/email']);
-        $user->setEmail($attributes['contact/email']);
+        $user->setUsername($address);
+        $user->setEmail($address);
         $user->setFirstName($attributes['namePerson/first']);
         $user->setLastName($attributes['namePerson/last']);
         $user->setEnabled(true);
 
-        $group = $this->em->getRepository('EndroidUserBundle:Group')->findOneByName('admin');
-        $user->addGroup($group);
+        foreach ($groupNames as $groupName) {
+            $group = $this->em->getRepository('EndroidUserBundle:Group')->findOneByName($groupName);
+            $user->addGroup($group);
+        }
 
         /** @var TokenGenerator $tokenGenerator */
         $tokenGenerator = $this->container->get('fos_user.util.token_generator');

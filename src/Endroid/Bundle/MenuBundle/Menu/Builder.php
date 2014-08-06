@@ -37,7 +37,7 @@ class Builder extends ContainerAware
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
-        $menu->setCurrentUri($request->getRequestUri());
+        $menu->setCurrent($request->getRequestUri());
 
         $menuItem = $this->container->get('doctrine')->getRepository('EndroidMenuBundle:MenuItem')->findOneByTag($tag);
 

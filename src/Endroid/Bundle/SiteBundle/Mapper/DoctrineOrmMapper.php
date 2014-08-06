@@ -121,7 +121,7 @@ class DoctrineOrmMapper extends BaseDoctrineRdfMapper
     /**
      * Reorder the children of the collection node according to the expected order
      *
-     * @param EntityInterface $entity
+     * @param EntityInterface     $entity
      * @param CollectionInterface $node
      * @param $expectedOrder array of subjects
      */

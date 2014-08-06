@@ -100,6 +100,9 @@ sonata_user:
         user: Endroid\Bundle\UserBundle\Entity\User
         group: Endroid\Bundle\UserBundle\Entity\Group
 
+endroid_user:
+    whitelist: %whitelist%
+
 sonata_admin:
     title: Symfony Application
     title_logo: /bundles/endroidadmin/img/logo_title.png

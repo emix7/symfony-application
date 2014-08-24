@@ -1,10 +1,10 @@
 # Endroid Symfony Application
 
-[![Build Status](http://img.shields.io/travis/endroid/symfony-application.svg)](https://travis-ci.org/endroid/symfony-application)
-[![License](http://img.shields.io/packagist/l/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
 [![Latest Stable Version](http://img.shields.io/packagist/v/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
-[![Total Downloads](http://img.shields.io/packagist/dt/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
+[![Build Status](http://img.shields.io/travis/endroid/symfony-application.svg)](https://travis-ci.org/endroid/symfony-application)
 [![Scrutinizer Quality Score](http://img.shields.io/scrutinizer/g/endroid/symfony-application.svg)](https://scrutinizer-ci.com/g/endroid/symfony-application/)
+[![Total Downloads](http://img.shields.io/packagist/dt/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
+[![License](http://img.shields.io/packagist/l/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
 [![PayPayl donate button](http://img.shields.io/badge/paypal-donate-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RGH86QN825TWN "Keep me off the streets")
 
 Use this project if you want to quickly set up a basis for your web application. This application

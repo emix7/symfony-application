@@ -43,7 +43,7 @@ See http://www.elasticsearch.org/guide/reference/setup/installation/ for more in
 
 ### Install wkhtmltopdf and wkhtmltoimage (optional)
 
-See https://code.google.com/p/wkhtmltopdf/ and  for more information.
+See https://code.google.com/p/wkhtmltopdf/ for more information.
 
 ### Load fixtures (optional)
 

@@ -1,11 +1,11 @@
 # Endroid Symfony Application
 
-[![License](https://poser.pugx.org/endroid/symfony-application/license.png)](https://packagist.org/packages/endroid/symfony-application)
-[![Latest Stable Version](https://poser.pugx.org/endroid/symfony-application/v/stable.png)](https://packagist.org/packages/endroid/symfony-application)
-[![Total Downloads](https://poser.pugx.org/endroid/symfony-application/downloads.png)](https://packagist.org/packages/endroid/symfony-application)
-[![Build Status](https://travis-ci.org/endroid/symfony-application.png?branch=master)](https://travis-ci.org/endroid/symfony-application)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/endroid/symfony-application/badges/quality-score.png?s=0cb8f00fa293d34f949493bb755454690cfeb43c)](https://scrutinizer-ci.com/g/endroid/symfony-application/)
-[![Dependency Status](https://www.versioneye.com/user/projects/53ac8f98d043f9b1d4000042/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53ac8f98d043f9b1d4000042)
+[![Build Status](http://img.shields.io/travis/endroid/symfony-application.svg)](https://travis-ci.org/endroid/symfony-application)
+[![License](http://img.shields.io/packagist/l/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
+[![Latest Stable Version](http://img.shields.io/packagist/v/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
+[![Total Downloads](http://img.shields.io/packagist/dt/endroid/symfony-application.svg)](https://packagist.org/packages/endroid/symfony-application)
+[![Scrutinizer Quality Score](http://img.shields.io/scrutinizer/g/endroid/symfony-application.svg)](https://scrutinizer-ci.com/g/endroid/symfony-application/)
+[![PayPayl donate button](http://img.shields.io/badge/paypal-donate-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RGH86QN825TWN "Keep me off the streets")
 
 Use this project if you want to quickly set up a basis for your web application. This application
 is built on [`endroid/symfony-standard`](https://github.com/symfony/symfony-standard) and extended

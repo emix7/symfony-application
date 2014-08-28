@@ -186,21 +186,21 @@ raul_fraile_ladybug:
     theme: modern
 
 endroid_google_analytics:
-    trackers:
-        default: %google_analytics_tracker%
+    trackers: %google_analytics_trackers%
 
 fos_rest:
-    param_fetcher_listener: true
+    param_fetcher_listener: force
     view:
-        view_response_listener: 'force'
+        view_response_listener: force
         formats:
             json: true
             xml: true
         templating_formats:
             html: true
-#    format_listener:
-#        rules:
-#            - { path: ^/, priorities: [ json ], fallback_format: html, prefer_extension: true }
+    format_listener:
+        rules:
+            - { path: ^/api/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension: true }
+            - { path: ^/, priorities: [ application/javascript, text/css, html, */* ], fallback_format: html, prefer_extension: true }
     exception:
         codes:
             Symfony\Component\Routing\Exception\ResourceNotFoundException: 404

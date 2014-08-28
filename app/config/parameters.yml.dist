@@ -18,7 +18,7 @@ parameters:
 
     wkhtmltopdf_path:           /usr/local/bin/wkhtmltopdf
     wkhtmltoimage_path:         /usr/local/bin/wkhtmltoimage
-    google_analytics_tracker:   ~
+    google_analytics_trackers:  ~
     search_index:               default
     redis_prefix:               ~
     whitelist:                  ~

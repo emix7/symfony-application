@@ -8,7 +8,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.4",
+        "symfony/symfony": "~2.5",
         "doctrine/orm": "~2.2",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
@@ -48,8 +48,7 @@
         "predis/predis": "~0.8",
         "symfony/icu": "~1.0",
         "symfony-cmf/create-bundle": "~1.0",
-        "midgard/createphp": "~1.0",
-	"umpirsky/composer-permissions-handler": "~1.0"
+        "midgard/createphp": "~1.0"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "~0.4",
@@ -63,7 +62,6 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Umpirsky\\PermissionsHandler\\ScriptHandler::setPermissions",
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -72,7 +70,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
-            "Umpirsky\\PermissionsHandler\\ScriptHandler::setPermissions",
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -92,7 +89,6 @@
         "ckeditor-directory": "vendor/symfony-cmf/create-bundle/Symfony/Cmf/Bundle/CreateBundle/Resources/public/vendor/ckeditor",
         "ckeditor-repository": "https://github.com/ckeditor/ckeditor-releases.git",
         "ckeditor-commit": "bba29309f93a1ace1e2e3a3bd086025975abbad0",
-        "writable-dirs": ["app/cache", "app/logs"],
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "symfony-assets-install": "symlink",

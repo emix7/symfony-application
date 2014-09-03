@@ -31,19 +31,11 @@ to get a quick impression of the full package.
     php app/console doctrine:database:create
     php app/console doctrine:schema:update --force
 
-### Set permissions
+### Install optional services
 
-    HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-    sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
-    sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
-
-### Install ElasticSearch (optional)
-
-See http://www.elasticsearch.org/guide/reference/setup/installation/ for more information.
-
-### Install wkhtmltopdf and wkhtmltoimage (optional)
-
-See https://code.google.com/p/wkhtmltopdf/ for more information.
+  * [`ElasticSearch`](http://www.elasticsearch.org/guide/reference/setup/installation/)
+  * [`Redis`](http://redis.io/topics/quickstart)
+  * [`wkhtmltopdf and wkhtmltoimage`](http://wkhtmltopdf.org/)
 
 ### Load fixtures (optional)
 

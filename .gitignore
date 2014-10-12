@@ -7,8 +7,8 @@
 /bin/
 /build/
 /vendor/
+/web/assets/
 /web/bundles/
-/web/compiled/
 /web/uploads/
 /composer.phar
 
@@ -22,3 +22,8 @@
 # IDE
 /.idea
 *.iml
+
+# Front end
+bower_components/
+node_modules/
+npm-debug.log

@@ -44,9 +44,8 @@ class SortableListener
         $manager = $args->getEntityManager();
         $repository = $manager->getRepository(get_class($entity));
 
-        $originalEntity = $repository->findOneById($entity->getId());
-
         if ($entity instanceof SortableInterface) {
+            $originalEntity = $repository->findOneById($entity->getId());
             if ($entity->getPosition() == null) {
                 $entity->setPosition($entity->getId());
             } elseif ($originalEntity->getPosition() != $entity->getPosition()) {

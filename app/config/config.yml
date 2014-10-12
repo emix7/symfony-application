@@ -100,8 +100,8 @@ endroid_user:
     whitelist: %whitelist%
 
 sonata_admin:
-    title: Symfony Application
-    title_logo: /bundles/endroidadmin/img/logo_title.png
+    title: Application
+    title_logo: /bundles/endroidadmin/img/logo-title.png
     templates:
         layout: EndroidAdminBundle::layout.html.twig
     extensions:

@@ -2,61 +2,35 @@
 
 namespace Endroid\Bundle\SiteBundle\Features\Context;
 
+use Behat\MinkExtension\Context\MinkContext;
+use Behat\Symfony2Extension\Context\KernelDictionary;
 use Endroid\Bundle\OAuthBundle\Command\CreateClientCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Behat\Symfony2Extension\Context\KernelAwareInterface;
-use Behat\MinkExtension\Context\RawMinkContext;
 
 /**
  * Feature context.
  */
-class FeatureContext extends RawMinkContext implements KernelAwareInterface
+class FeatureContext extends MinkContext
 {
     private $kernel;
-    private $parameters;
+    use KernelDictionary;
 
     protected $clientId;
     protected $clientSecret;
     protected $accessToken;
 
     /**
-     * Initializes context with parameters from behat.yml.
+     * Sets the kernel.
      *
-     * @param array $parameters
+     * @param $kernel
      */
-    public function __construct(array $parameters)
-    {
-        $this->parameters = $parameters;
-    }
-
-    /**
-     * Sets HttpKernel instance.
-     * This method will be automatically called by Symfony2Extension ContextInitializer.
-     *
-     * @param KernelInterface $kernel
-     */
-    public function setKernel(KernelInterface $kernel)
+    public function setKernel($kernel)
     {
         $this->kernel = $kernel;
     }
 
-    /**
-     * @Given /^I am on "([^"]*)"$/
-     */
-    public function iAmOn($path)
-    {
-        $this->getSession()->visit($path);
-    }
-
-    /**
-     * @Then /^I should see "([^"]*)"$/
-     */
-    public function iShouldSee($string)
-    {
-        $this->assertSession()->responseContains($string);
-    }
 
     /**
      * @Given /^I create a client id and secret$/

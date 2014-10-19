@@ -1,15 +1,11 @@
 default:
-    context:
-        class: Endroid\Bundle\SiteBundle\Features\Context\FeatureContext
     extensions:
-        Behat\MinkExtension\Extension:
-            default_session: symfony2
-            goutte: ~
-            browser_name: firefox
-        Behat\Symfony2Extension\Extension:
-            mink_driver: true
-
-site:
-    extensions:
-        Behat\Symfony2Extension\Extension:
+        Behat\Symfony2Extension: ~
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
+    suites:
+        endroid_site:
+            type: symfony_bundle
             bundle: EndroidSiteBundle

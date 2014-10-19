@@ -5,5 +5,4 @@ Feature: Show home page
 
   Scenario: Show home page
     Given I am on "/"
-    And print last response
     Then I should see "Symfony Application" in the "h1" element

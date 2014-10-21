@@ -7,7 +7,6 @@
 /bin/
 /build/
 /vendor/
-/web/assets/
 /web/bundles/
 /web/uploads/
 /composer.phar

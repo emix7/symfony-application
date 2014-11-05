@@ -7,7 +7,6 @@ use Behat\Symfony2Extension\Context\KernelDictionary;
 use Endroid\Bundle\OAuthBundle\Command\CreateClientCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
-use Behat\Symfony2Extension\Context\KernelAwareInterface;
 
 /**
  * Feature context.
@@ -30,7 +29,6 @@ class FeatureContext extends MinkContext
     {
         $this->kernel = $kernel;
     }
-
 
     /**
      * @Given /^I create a client id and secret$/

@@ -22,3 +22,4 @@ parameters:
     search_index:               default
     redis_prefix:               ~
     whitelist:                  ~
+    session_save_path:          /tmp/sessions

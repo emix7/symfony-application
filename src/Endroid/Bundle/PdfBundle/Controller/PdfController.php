@@ -9,7 +9,6 @@
 
 namespace Endroid\Bundle\PdfBundle\Controller;
 
-use DateTime;
 use iio\libmergepdf\Merger;
 use iio\libmergepdf\Pages;
 use Knp\Bundle\SnappyBundle\Snappy;
@@ -302,7 +301,7 @@ class PdfController extends Controller
      * Fix relative paths to resources.
      *
      * @param $content
-     * @param bool $reverse
+     * @param  bool  $reverse
      * @return mixed
      */
     public function fixPaths($content, $reverse = false)
@@ -324,7 +323,7 @@ class PdfController extends Controller
      * Filters the HTML to only show the given IDs.
      *
      * @param $html
-     * @param array $ids
+     * @param  array $ids
      * @return mixed
      */
     public function addFilters($html, $ids = array())

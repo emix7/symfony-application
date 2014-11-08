@@ -10,7 +10,7 @@ endroid_pdf:
     resource:   "@EndroidPdfBundle/Controller/"
     type:       annotation
     prefix:     /pdf
-    
+
 endroid_api:
     resource:   "@EndroidApiBundle/Resources/config/routes.yml"
     type:       rest

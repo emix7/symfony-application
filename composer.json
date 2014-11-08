@@ -31,6 +31,7 @@
         "phpexcel/phpexcel": "~1.7",
         "phpword/phpword": "dev-master",
         "knplabs/knp-snappy-bundle": "~1.0",
+        "iio/libmergepdf": "~2.0",
         "stfalcon/tinymce-bundle": "~0.2",
         "friendsofsymfony/elastica-bundle": "~3.0",
         "friendsofsymfony/rest-bundle": "~1.1",

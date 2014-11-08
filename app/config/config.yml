@@ -124,8 +124,13 @@ knp_snappy:
         enabled:    true
         binary:     %wkhtmltopdf_path%
         options:
-            - { name: ignore-load-errors, value: true }
+            - { name: dpi, value: 150 }
             - { name: lowquality, value: false }
+            - { name: disable-smart-shrinking, value: true }
+            - { name: margin-top, value: 0 }
+            - { name: margin-right, value: 0 }
+            - { name: margin-bottom, value: 0 }
+            - { name: margin-left, value: 0 }
     image:
         enabled:    true
         binary:     %wkhtmltoimage_path%

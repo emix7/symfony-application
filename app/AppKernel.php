@@ -53,6 +53,7 @@ class AppKernel extends Kernel
             new Endroid\Bundle\NewsBundle\EndroidNewsBundle(),
             new Endroid\Bundle\OAuthBundle\EndroidOAuthBundle(),
             new Endroid\Bundle\PageBundle\EndroidPageBundle(),
+            new Endroid\Bundle\PdfBundle\EndroidPdfBundle(),
             new Endroid\Bundle\RouteBundle\EndroidRouteBundle(),
             new Endroid\Bundle\SearchBundle\EndroidSearchBundle(),
             new Endroid\Bundle\SiteBundle\EndroidSiteBundle(),

@@ -2,7 +2,8 @@
 
 The following documents are available.
 
-- [Multilingualism](multilingualism.md)
+- [Installation](installation.md)
 - [Assets](assets.md)
+- [Multilingualism](multilingualism.md)
 - [REST API](rest-api.md)
 - [PDF Generation](pdf-generation.md)

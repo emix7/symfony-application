@@ -9,13 +9,13 @@
 
 namespace Endroid\Bundle\BehaviorBundle\Admin\Extension;
 
-use Endroid\Bundle\BehaviorBundle\DependencyInjection\ContainerAwareTrait;
 use Endroid\Bundle\BehaviorBundle\Model\TranslationInterface;
 use Sonata\AdminBundle\Admin\AdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class TranslationAdminExtension extends AdminExtension implements ContainerAwareInterface
 {

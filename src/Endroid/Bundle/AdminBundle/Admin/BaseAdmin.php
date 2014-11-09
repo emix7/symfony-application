@@ -9,11 +9,11 @@
 
 namespace Endroid\Bundle\AdminBundle\Admin;
 
-use Endroid\Bundle\BehaviorBundle\DependencyInjection\ContainerAwareTrait;
 use ReflectionClass;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class BaseAdmin extends Admin implements ContainerAwareInterface
 {

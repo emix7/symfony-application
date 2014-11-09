@@ -11,8 +11,8 @@ namespace Endroid\Bundle\BehaviorBundle\Filter;
 
 use Doctrine\ORM\Query\Filter\SQLFilter;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use Endroid\Bundle\BehaviorBundle\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class PublishableFilter extends SQLFilter implements ContainerAwareInterface
 {

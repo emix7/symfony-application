@@ -9,11 +9,11 @@
 
 namespace Endroid\Bundle\BehaviorBundle\Admin\Extension;
 
-use Endroid\Bundle\BehaviorBundle\DependencyInjection\ContainerAwareTrait;
 use Sonata\AdminBundle\Admin\AdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class TraversableAdminExtension extends AdminExtension implements ContainerAwareInterface
 {

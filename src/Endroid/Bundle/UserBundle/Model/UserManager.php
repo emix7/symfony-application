@@ -9,12 +9,12 @@
 
 namespace Endroid\Bundle\UserBundle\Model;
 
-use Endroid\Bundle\BehaviorBundle\DependencyInjection\ContainerAwareTrait;
 use Endroid\Bundle\UserBundle\Entity\User;
 use FOS\UserBundle\Entity\UserManager as FOSUserManager;
 use FOS\UserBundle\Util\TokenGenerator;
 use Fp\OpenIdBundle\Security\Core\User\UserManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 
 class UserManager extends FOSUserManager implements UserManagerInterface, ContainerAwareInterface

@@ -42,6 +42,7 @@ class AppKernel extends Kernel
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
+            new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
 
             // Project specific bundles
             new Endroid\Bundle\AdminBundle\EndroidAdminBundle(),
@@ -50,6 +51,7 @@ class AppKernel extends Kernel
             new Endroid\Bundle\GoogleAnalyticsBundle\EndroidGoogleAnalyticsBundle(),
             new Endroid\Bundle\MediaBundle\EndroidMediaBundle(),
             new Endroid\Bundle\MenuBundle\EndroidMenuBundle(),
+            new Endroid\Bundle\MessagingBundle\EndroidMessagingBundle(),
             new Endroid\Bundle\NewsBundle\EndroidNewsBundle(),
             new Endroid\Bundle\OAuthBundle\EndroidOAuthBundle(),
             new Endroid\Bundle\PageBundle\EndroidPageBundle(),

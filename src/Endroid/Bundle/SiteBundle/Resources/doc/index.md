@@ -6,4 +6,5 @@ The following documents are available.
 - [Assets](assets.md)
 - [Multilingualism](multilingualism.md)
 - [REST API](rest-api.md)
+- [Messaging](messaging.md)
 - [PDF Generation](pdf-generation.md)

@@ -6,6 +6,11 @@ endroid_news:
     type:       annotation
     prefix:     /news
 
+endroid_messaging:
+    resource:   "@EndroidMessagingBundle/Controller/"
+    type:       annotation
+    prefix:     /messaging
+
 endroid_pdf:
     resource:   "@EndroidPdfBundle/Controller/"
     type:       annotation

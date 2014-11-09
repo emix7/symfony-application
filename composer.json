@@ -7,7 +7,7 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.3",
+        "php": "~5.4",
         "symfony/symfony": "~2.5",
         "doctrine/orm": "~2.2",
         "doctrine/doctrine-bundle": "~1.2",
@@ -49,7 +49,8 @@
         "predis/predis": "~0.8",
         "symfony/icu": "~1.0",
         "symfony-cmf/create-bundle": "~1.0",
-        "midgard/createphp": "~1.0"
+        "midgard/createphp": "~1.0",
+        "oldsound/rabbitmq-bundle": "~1.5"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "~0.4",

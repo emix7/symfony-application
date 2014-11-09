@@ -23,4 +23,4 @@ to get a quick impression of the full package.
 ## Documentation
 
 The documentation is stored inside the SiteBundle.
-[Read the Documentation](https://github.com/endroid/symfony-application/tree/master/src/Endroid/Bundle/SiteBundle/Resources/doc/index.md)
+[Read the Documentation](https://github.com/endroid/symfony-application/tree/master/src/Endroid/Bundle/SiteBundle/Resources/doc/index.md).

@@ -45,7 +45,10 @@ before_script:
 
 script:
     - bin/phpspec run -f dot
-    - php -d memory_limit=2048M bin/behat --no-snippets --verbose
+    - php -d memory_limit=2048M bin/behat --suite=endroid_api --no-snippets --verbose
+    - php -d memory_limit=2048M bin/behat --suite=endroid_messaging --no-snippets --verbose
+    - php -d memory_limit=2048M bin/behat --suite=endroid_pdf --no-snippets --verbose
+    - php -d memory_limit=2048M bin/behat --suite=endroid_site --no-snippets --verbose
 
 notifications:
     email: "info@endroid.nl"

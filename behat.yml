@@ -6,6 +6,15 @@ default:
                 default:
                     symfony2: ~
     suites:
+        endroid_api:
+            type: symfony_bundle
+            bundle: EndroidApiBundle
+        endroid_messaging:
+            type: symfony_bundle
+            bundle: EndroidMessagingBundle
+        endroid_pdf:
+            type: symfony_bundle
+            bundle: EndroidPdfBundle
         endroid_site:
             type: symfony_bundle
             bundle: EndroidSiteBundle

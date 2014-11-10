@@ -19,8 +19,7 @@ before_install:
 install:
     - sudo curl -O 'http://skylink.dl.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-precise-amd64.deb'
     - sudo dpkg -i ./wkhtmltox-0.12.1_linux-precise-amd64.deb
-    - which wkhtmltopdf
-    - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl > /dev/null
+    - sudo apt-get install -y --force-yes openssl build-essential xorg libssl-dev apache2 libapache2-mod-php5 php5-curl php5-intl > /dev/null
     - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
     - sudo /etc/init.d/apache2 restart
 
@@ -39,7 +38,7 @@ before_script:
     - app/console doctrine:fixtures:load -n --env=test > /dev/null
     - app/console fos:elastica:populate
     - app/console cache:warmup --env=test > /dev/null
-    - app/console rabbitmq:consumer message
+    - nohup /usr/bin/env php app/console rabbitmq:consumer message --env=test &
     - sh -e /etc/init.d/xvfb start
     - export DISPLAY=:99
     - sleep 5

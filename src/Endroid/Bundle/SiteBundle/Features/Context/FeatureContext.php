@@ -7,6 +7,7 @@ use Behat\Symfony2Extension\Context\KernelDictionary;
 use Endroid\Bundle\OAuthBundle\Command\CreateClientCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
+use Behat\Mink\Session;
 
 /**
  * Feature context.
@@ -80,6 +81,19 @@ class FeatureContext extends MinkContext
 
         if (!$json || (isset($json->error) && $json->error == 'invalid_grant')) {
             throw new \Exception('Invalid grant');
+        }
+    }
+
+    /**
+     * @Then /^I should see "([^"]*)" in the header "([^"]*)"$/
+     */
+    public function iShouldSeeInTheHeader($value, $header)
+    {
+        $header = strtolower($header);
+        $headers = $this->getSession()->getResponseHeaders();
+
+        if (!isset($headers[$header][0]) || strpos($headers[$header][0], $value) === false) {
+            throw new \Exception(sprintf('Did not see header '.$header.' with value '.$value, $header, $value));
         }
     }
 }

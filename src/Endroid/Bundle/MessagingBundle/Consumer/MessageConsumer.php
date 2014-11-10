@@ -26,6 +26,7 @@ class MessageConsumer implements ConsumerInterface
     {
         $message = json_decode($message->body, true);
 
-        ld($message);
+        $filePath = $this->get('kernel')->getCacheDir().'/message.json';
+        file_put_contents($filePath, json_encode($message));
     }
 }

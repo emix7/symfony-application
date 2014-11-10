@@ -14,22 +14,11 @@ use Behat\Mink\Session;
  */
 class FeatureContext extends MinkContext
 {
-    private $kernel;
     use KernelDictionary;
 
     protected $clientId;
     protected $clientSecret;
     protected $accessToken;
-
-    /**
-     * Sets the kernel.
-     *
-     * @param $kernel
-     */
-    public function setKernel($kernel)
-    {
-        $this->kernel = $kernel;
-    }
 
     /**
      * @Given /^I create a client id and secret$/
@@ -94,6 +83,20 @@ class FeatureContext extends MinkContext
 
         if (!isset($headers[$header][0]) || strpos($headers[$header][0], $value) === false) {
             throw new \Exception(sprintf('Did not see header '.$header.' with value '.$value, $header, $value));
+        }
+    }
+
+    /**
+     * @Then /^I should find a file "([^"]*)" in the cache folder$/
+     */
+    public function iShouldFindAFileInTheCacheFolder($fileName)
+    {
+        sleep(10);
+
+        $filePath = $this->kernel->getCacheDir().'/'.$fileName;
+
+        if (!file_exists($filePath)) {
+            throw new \Exception('File '.$fileName.' not found in cache folder');
         }
     }
 }

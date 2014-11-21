@@ -24,3 +24,12 @@ to get a quick impression of the full package.
 
 The documentation is stored inside the SiteBundle.
 [Read the Documentation](https://github.com/endroid/symfony-application/tree/master/src/Endroid/Bundle/SiteBundle/Resources/doc/index.md).
+
+## Versioning
+
+Semantic versioning ([semver](http://semver.org/)) is applied.
+
+## License
+
+This bundle is under the MIT license. For the full copyright and license information, please view the LICENSE file that
+was distributed with this source code.

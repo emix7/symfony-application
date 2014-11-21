@@ -29,7 +29,7 @@ class PublishableAdminExtension extends AdminExtension
         $listMapper
             ->add('published', null, array(
                 'label' => 'admin.behavior.publishable.published',
-                'editable' => true
+                'editable' => true,
             ))
         ;
     }

@@ -17,7 +17,7 @@ class ArticleAdmin extends BaseAdmin
 {
     protected $datagridValues = array(
         '_sort_by' => 'translatable.date',
-        '_sort_order' => 'DESC'
+        '_sort_order' => 'DESC',
     );
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -38,8 +38,8 @@ class ArticleAdmin extends BaseAdmin
                 ->add('image', 'sonata_type_model', array('required' => false, 'property_path' => 'translatable.image', 'class' => 'Endroid\\Bundle\\MediaBundle\\Entity\\Media'))
                 ->add('content', 'textarea', array(
                     'attr' => array(
-                        'class' => 'tinymce'
-                    )
+                        'class' => 'tinymce',
+                    ),
                 )
             )
             ->end()

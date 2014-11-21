@@ -55,7 +55,7 @@ class DoctrineOrmMapper extends BaseDoctrineRdfMapper
 
         $idstring = implode('|', $key);
 
-        return $this->canonicalName(get_class($object)) . "|$idstring";
+        return $this->canonicalName(get_class($object))."|$idstring";
     }
 
     /**
@@ -130,5 +130,4 @@ class DoctrineOrmMapper extends BaseDoctrineRdfMapper
         // Currently ordering children is not supported by the ORM. This could be implemented using
         // the sortable doctrine extension, e.g. https://github.com/l3pp4rd/DoctrineExtensions
     }
-
 }

@@ -17,7 +17,7 @@ class MenuAdmin extends BaseAdmin
 {
     protected $datagridValues = array(
         '_sort_by' => 'position',
-        '_sort_order' => 'ASC'
+        '_sort_order' => 'ASC',
     );
 
     protected function configureFormFields(FormMapper $formMapper)

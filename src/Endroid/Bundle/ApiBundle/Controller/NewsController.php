@@ -59,7 +59,7 @@ class NewsController extends FOSRestController
         $article = $this->container->get('endroid_news.article.handler')->get($id);
 
         if (!$article instanceof ArticleInterface) {
-            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$id));
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
         }
 
         return $article;

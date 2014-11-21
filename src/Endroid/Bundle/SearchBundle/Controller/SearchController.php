@@ -74,7 +74,7 @@ class SearchController extends Controller
 
         return array(
             'query' => $search,
-            'pagination' => $pagination
+            'pagination' => $pagination,
         );
     }
 }

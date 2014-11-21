@@ -48,7 +48,7 @@ class Builder extends ContainerAware
             }
             $menu->addChild($childRoute->getLabel(), array(
                 'route' => $childRoute->getName(),
-                'routeParameters' => $childRoute->getParameters() + array('_locale' => $this->container->get('request')->getLocale())
+                'routeParameters' => $childRoute->getParameters() + array('_locale' => $this->container->get('request')->getLocale()),
             ));
         }
 

@@ -28,7 +28,6 @@ class TraversableAdminExtension extends AdminExtension implements ContainerAware
     public function alterNewInstance(AdminInterface $admin, $object)
     {
         if ($object->getParent() == null) {
-
             $reflectionClass = $admin->getClass();
             $parent = $this->container->get('doctrine')->getRepository($reflectionClass)->findOneById($this->container->get('request')->query->get('parent'));
 

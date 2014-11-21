@@ -59,7 +59,7 @@ class PageController extends FOSRestController
         $page = $this->container->get('endroid_page.page.handler')->get($id);
 
         if (!$page instanceof PageInterface) {
-            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$id));
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
         }
 
         return $page;

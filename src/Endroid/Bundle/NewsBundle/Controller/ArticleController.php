@@ -36,7 +36,7 @@ class ArticleController extends Controller
         );
 
         return array(
-            'pagination' => $pagination
+            'pagination' => $pagination,
         );
     }
 
@@ -51,7 +51,7 @@ class ArticleController extends Controller
         $this->container->get('doctrine')->getManager()->getFilters()->disable('translation');
 
         return array(
-            'article' => $article
+            'article' => $article,
         );
     }
 }

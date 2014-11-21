@@ -22,8 +22,8 @@ class PageAdmin extends BaseAdmin
                 ->add('title')
                 ->add('content', 'textarea', array(
                     'attr' => array(
-                        'class' => 'tinymce'
-                    )
+                        'class' => 'tinymce',
+                    ),
                 ))
                 ->add('form')
             ->end()

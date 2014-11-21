@@ -13,5 +13,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class EndroidBehaviorBundle extends Bundle
 {
-
 }

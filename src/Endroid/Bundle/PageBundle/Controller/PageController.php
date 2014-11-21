@@ -27,7 +27,7 @@ class PageController extends Controller
         $this->container->get('doctrine')->getManager()->getFilters()->disable('translation');
 
         return array(
-            'page' => $page
+            'page' => $page,
         );
     }
 }

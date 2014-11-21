@@ -24,11 +24,11 @@ class SitemapController extends Controller
     {
         $menus = array(
             $this->get('endroid_menu.main'),
-            $this->get('endroid_menu.footer')
+            $this->get('endroid_menu.footer'),
         );
 
         return array(
-            'menus' => $menus
+            'menus' => $menus,
         );
     }
 

@@ -35,7 +35,7 @@ class TranslationAdminExtension extends AdminExtension implements ContainerAware
             ->with('General')
                 ->add('translatable', 'hidden', array(
                     'data' => $translatable->getId(),
-                    'mapped' => false
+                    'mapped' => false,
                 ))
             ->end()
         ;
@@ -58,7 +58,7 @@ class TranslationAdminExtension extends AdminExtension implements ContainerAware
         $listMapper
             ->add('translations', 'string', array(
                 'label' => 'admin.behavior.translatable.translations',
-                'template' => 'EndroidBehaviorBundle:Admin:translations.html.twig'
+                'template' => 'EndroidBehaviorBundle:Admin:translations.html.twig',
             ));
     }
 

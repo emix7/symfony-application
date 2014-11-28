@@ -1,0 +1,27 @@
+Endroid\Bundle\PageBundle\Entity\PageTranslatable:
+    page_translatable_contact: []
+    page_translatable_about_us: []
+
+Endroid\Bundle\PageBundle\Entity\Page:
+    page_about_us_en:
+        title: About us
+        content: <p><text(750)></p>
+        locale: en
+        translatable: @page_translatable_about_us
+    page_contact_en:
+        title: Contact
+        content: <p><text(750)></p>
+        locale: en
+        translatable: @page_translatable_contact
+        form: @form_contact_en
+    page_about_us_nl:
+        title: Over ons
+        content: <p><text(750)></p>
+        locale: nl
+        translatable: @page_translatable_about_us
+    page_contact_nl:
+        title: Contact
+        content: <p><text(750)></p>
+        locale: nl
+        translatable: @page_translatable_contact
+        form: @form_contact_nl

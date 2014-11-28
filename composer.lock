@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ffb1326b4b5ccb845a336d61b7f30607",
+    "hash": "be4e35ab80517b6de1d34c7022bd3dc5",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1353,6 +1353,54 @@
             "time": "2014-09-04 12:28:43"
         },
         {
+            "name": "fzaninotto/faker",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/010c7efedd88bf31141a02719f51fb44c732d5a0",
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": []
+            },
+            "autoload": {
+                "psr-0": {
+                    "Faker": "src/",
+                    "Faker\\PHPUnit": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2014-06-04 14:43:02"
+        },
+        {
             "name": "gedmo/doctrine-extensions",
             "version": "v2.3.9",
             "source": {
@@ -1533,6 +1581,64 @@
                 "visual"
             ],
             "time": "2014-07-31 14:41:27"
+        },
+        {
+            "name": "hautelook/alice-bundle",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hautelook/AliceBundle.git",
+                "reference": "44824200e88cdec9b9f8ee5056c4a197299e5293"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/44824200e88cdec9b9f8ee5056c4a197299e5293",
+                "reference": "44824200e88cdec9b9f8ee5056c4a197299e5293",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/doctrine-fixtures-bundle": "~2.2",
+                "nelmio/alice": "~1.7",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.4",
+                "hautelook/solarium-fixtures": "~1.0",
+                "solarium/solarium": "~3.1",
+                "symfony/browser-kit": "~2.1",
+                "symfony/console": "~2.1",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/validator": "~2.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "hautelook/solarium-fixtures": "To add Solarium fixtures"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Hautelook\\AliceBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Baldur Rensch",
+                    "email": "brensch@gmail.com"
+                }
+            ],
+            "description": "Symfony2 Bundle that helps loading fixture data written with the Alice library",
+            "keywords": [
+                "Fixture",
+                "Symfony2",
+                "alice",
+                "orm"
+            ],
+            "time": "2014-10-19 05:10:40"
         },
         {
             "name": "iio/libmergepdf",
@@ -2551,16 +2657,16 @@
         },
         {
             "name": "knplabs/knp-snappy",
-            "version": "0.2.1",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/snappy.git",
-                "reference": "e5d1e7486d9344a6cc5c3194daad7a5141b92e6e"
+                "reference": "523d41047c117d973150c343dbd76160a045eeb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/e5d1e7486d9344a6cc5c3194daad7a5141b92e6e",
-                "reference": "e5d1e7486d9344a6cc5c3194daad7a5141b92e6e",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/523d41047c117d973150c343dbd76160a045eeb6",
+                "reference": "523d41047c117d973150c343dbd76160a045eeb6",
                 "shasum": ""
             },
             "require": {
@@ -2576,7 +2682,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -2608,7 +2714,7 @@
                 "thumbnail",
                 "wkhtmltopdf"
             ],
-            "time": "2014-10-14 16:54:20"
+            "time": "2014-11-26 21:43:25"
         },
         {
             "name": "knplabs/knp-snappy-bundle",
@@ -2981,6 +3087,63 @@
             "time": "2014-09-30 13:30:58"
         },
         {
+            "name": "nelmio/alice",
+            "version": "1.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nelmio/alice.git",
+                "reference": "33cfab06b7e0d546c001ba95f9c594e4bd63d958"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nelmio/alice/zipball/33cfab06b7e0d546c001ba95f9c594e4bd63d958",
+                "reference": "33cfab06b7e0d546c001ba95f9c594e4bd63d958",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "~1.0",
+                "php": ">=5.3",
+                "symfony/yaml": "~2.0"
+            },
+            "require-dev": {
+                "doctrine/common": "~2.3",
+                "phpunit/phpunit": "3.7.*",
+                "symfony/property-access": "~2.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nelmio\\Alice\\": "src/Nelmio/Alice"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Shelburne"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "Expressive fixtures generator",
+            "keywords": [
+                "Fixture",
+                "data",
+                "orm",
+                "test"
+            ],
+            "time": "2014-10-10 13:07:37"
+        },
+        {
             "name": "nelmio/api-doc-bundle",
             "version": "2.7.0",
             "target-dir": "Nelmio/ApiDocBundle",
@@ -3057,17 +3220,17 @@
         },
         {
             "name": "netvlies/form-bundle",
-            "version": "1.0.12",
+            "version": "1.0.14",
             "target-dir": "Netvlies/Bundle/NetvliesFormBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/netvlies/NetvliesFormBundle.git",
-                "reference": "cc97611c154e1f77cb0d1008fda92f8993ac40db"
+                "reference": "ace7410ad3b759e78dd9d02f0736cd45a0247996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/netvlies/NetvliesFormBundle/zipball/cc97611c154e1f77cb0d1008fda92f8993ac40db",
-                "reference": "cc97611c154e1f77cb0d1008fda92f8993ac40db",
+                "url": "https://api.github.com/repos/netvlies/NetvliesFormBundle/zipball/ace7410ad3b759e78dd9d02f0736cd45a0247996",
+                "reference": "ace7410ad3b759e78dd9d02f0736cd45a0247996",
                 "shasum": ""
             },
             "require": {
@@ -3121,7 +3284,7 @@
                 "netvlies",
                 "symfony"
             ],
-            "time": "2013-08-28 21:28:11"
+            "time": "2014-11-28 07:40:28"
         },
         {
             "name": "nikic/php-parser",
@@ -3872,17 +4035,17 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v3.0.9",
+            "version": "v3.0.10",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "82d85b032db66163568ad988e630e5ad74138c72"
+                "reference": "ca188a500a7bef815a46f19f8616f0a775e7dbf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/82d85b032db66163568ad988e630e5ad74138c72",
-                "reference": "82d85b032db66163568ad988e630e5ad74138c72",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/ca188a500a7bef815a46f19f8616f0a775e7dbf2",
+                "reference": "ca188a500a7bef815a46f19f8616f0a775e7dbf2",
                 "shasum": ""
             },
             "require": {
@@ -3921,7 +4084,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2014-11-21 15:36:24"
+            "time": "2014-11-23 18:30:35"
         },
         {
             "name": "sensio/framework-extra-bundle",

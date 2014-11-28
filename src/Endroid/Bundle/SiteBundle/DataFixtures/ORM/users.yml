@@ -1,0 +1,21 @@
+Endroid\Bundle\UserBundle\Entity\Group:
+    group_super_admin:
+        __construct: [ Super administrators ]
+        roles: [ ROLE_SUPER_ADMIN ]
+    group_admin:
+        __construct: [ Administrators ]
+        roles: [ ROLE_ADMIN ]
+
+Endroid\Bundle\UserBundle\Entity\User:
+    user_super_admin:
+        username: superadmin
+        email: superadmin@admin.com
+        groups: [ @group_super_admin ]
+        enabled: true
+        plainPassword: superadmin
+    user_admin:
+        username: admin
+        email: admin@admin.com
+        groups: [ @group_admin ]
+        enabled: true
+        plainPassword: admin

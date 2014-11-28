@@ -50,7 +50,8 @@
         "symfony/icu": "~1.0",
         "symfony-cmf/create-bundle": "~1.0",
         "midgard/createphp": "~1.0",
-        "oldsound/rabbitmq-bundle": "~1.5"
+        "oldsound/rabbitmq-bundle": "~1.5",
+        "hautelook/alice-bundle": "~0.1"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "~1.0",

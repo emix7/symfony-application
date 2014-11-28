@@ -1,0 +1,15 @@
+Endroid\Bundle\NewsBundle\Entity\ArticleTranslatable:
+    news_article_translatable_{1..10}:
+        date: <datetime()>
+
+Endroid\Bundle\NewsBundle\Entity\Article:
+    news_article_en_{1..10}:
+        title: <text(50)>
+        content: <p><text(750)></p>
+        locale: en
+        translatable: @news_article_translatable_<current()>
+    news_article_nl_{1..10}:
+        title: <text(50)>
+        content: <p><text(750)></p>
+        locale: nl
+        translatable: @news_article_translatable_<current()>

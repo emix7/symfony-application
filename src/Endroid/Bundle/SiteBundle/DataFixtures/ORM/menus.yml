@@ -1,0 +1,39 @@
+Endroid\Bundle\MenuBundle\Entity\MenuItem:
+    menu_main_en:
+        tag: Main menu
+    menu_main_about_us_en:
+        parent: @menu_main_en
+        routeKey: endroid_page_page_show_1
+    menu_main_news_en:
+        parent: @menu_main_en
+        routeKey: endroid_news_article_index
+    menu_main_contact_en:
+        parent: @menu_main_en
+        routeKey: endroid_page_page_show_3
+    menu_footer_en:
+        tag: Footer menu
+    menu_footer_contact_en:
+        parent: @menu_footer_en
+        routeKey: endroid_page_page_show_3
+    menu_footer_sitemap_en:
+        parent: @menu_footer_en
+        routeKey: endroid_sitemap_sitemap_index
+    menu_main_nl:
+        tag: Hoofdmenu
+    menu_main_about_us_nl:
+        parent: @menu_main_nl
+        routeKey: endroid_page_page_show_2
+    menu_main_news_nl:
+        parent: @menu_main_nl
+        routeKey: endroid_news_article_index
+    menu_main_contact_nl:
+        parent: @menu_main_nl
+        routeKey: endroid_page_page_show_4
+    menu_footer_nl:
+        tag: Footermenu
+    menu_footer_contact_nl:
+        parent: @menu_footer_nl
+        routeKey: endroid_page_page_show_4
+    menu_footer_sitemap_nl:
+        parent: @menu_footer_nl
+        routeKey: endroid_sitemap_sitemap_index

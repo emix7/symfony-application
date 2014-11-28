@@ -1,0 +1,59 @@
+Netvlies\Bundle\NetvliesFormBundle\Entity\Option:
+    option_contact_mr_en:
+        label: Mr.
+    option_contact_mrs_en:
+        label: Mrs.
+    option_contact_mr_nl:
+        label: Dhr.
+    option_contact_mrs_nl:
+        label: Mevr.
+
+Netvlies\Bundle\NetvliesFormBundle\Entity\Field:
+    field_contact_salutation_en:
+        label: Salutation
+        type: select
+        selectType: radio
+        required: true
+        options: [ @option_contact_mr_en, @option_contact_mrs_en ]
+        default: @option_contact_mr_en->label
+    field_contact_name_en:
+        label: Name
+        type: text
+        required: true
+    field_contact_email_en:
+        label: Email address
+        type: email
+        required: true
+    field_contact_message_en:
+        label: Message
+        type: textarea
+        required: true
+    field_contact_salutation_nl:
+        label: Aanhef
+        type: select
+        selectType: radio
+        required: true
+        options: [ @option_contact_mr_nl, @option_contact_mrs_nl ]
+        default: @option_contact_mr_nl->label
+    field_contact_name_nl:
+        label: Naam
+        type: text
+        required: true
+    field_contact_email_nl:
+        label: E-mailadres
+        type: email
+        required: true
+    field_contact_message_nl:
+        label: Bericht
+        type: textarea
+        required: true
+
+Netvlies\Bundle\NetvliesFormBundle\Entity\Form:
+    form_contact_en:
+        label: Contact form
+        successAction: url
+        fields: [ @field_contact_salutation_en, @field_contact_name_en, @field_contact_email_en, @field_contact_message_en ]
+    form_contact_nl:
+        label: Contactformulier
+        successAction: url
+        fields: [ @field_contact_salutation_nl, @field_contact_name_nl, @field_contact_email_nl, @field_contact_message_nl ]

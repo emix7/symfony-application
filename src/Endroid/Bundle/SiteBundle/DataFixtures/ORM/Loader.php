@@ -10,7 +10,6 @@
 namespace Endroid\Bundle\SiteBundle\DataFixtures\ORM;
 
 use Hautelook\AliceBundle\Alice\DataFixtureLoader;
-use Nelmio\Alice\Fixtures;
 
 class Loader extends DataFixtureLoader
 {
@@ -24,7 +23,7 @@ class Loader extends DataFixtureLoader
             __DIR__.'/pages.yml',
             __DIR__.'/news_articles.yml',
             __DIR__.'/menus.yml',
-            __DIR__.'/users.yml'
+            __DIR__.'/users.yml',
         );
     }
 }

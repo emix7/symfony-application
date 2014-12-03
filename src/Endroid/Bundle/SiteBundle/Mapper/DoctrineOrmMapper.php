@@ -10,7 +10,7 @@ namespace Endroid\Bundle\SiteBundle\Mapper;
 
 use Midgard\CreatePHP\Entity\CollectionInterface;
 use Midgard\CreatePHP\Entity\EntityInterface;
-use \RuntimeException;
+use RuntimeException;
 use Midgard\CreatePHP\Mapper\BaseDoctrineRdfMapper;
 
 /**

@@ -50,7 +50,7 @@ class RouteCollector
         $this->loadRoutes();
 
         if (!array_key_exists($key, $this->routes)) {
-            return null;
+            return;
         }
 
         return $this->routes[$key];

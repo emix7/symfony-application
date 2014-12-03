@@ -69,7 +69,7 @@ trait TranslatableTrait
             }
         }
 
-        return null;
+        return;
     }
 
     /**

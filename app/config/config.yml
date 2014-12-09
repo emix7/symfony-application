@@ -185,9 +185,6 @@ jms_i18n_routing:
     locales: %locales%
     strategy: prefix_except_default
 
-raul_fraile_ladybug:
-    theme: modern
-
 endroid_google_analytics:
     trackers: %google_analytics_trackers%
 

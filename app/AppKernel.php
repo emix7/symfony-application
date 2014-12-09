@@ -30,7 +30,6 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Netvlies\Bundle\NetvliesFormBundle\NetvliesFormBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
@@ -68,6 +67,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
         }
 
         return $bundles;
@@ -86,7 +86,7 @@ class AppKernel extends Kernel
     public function getCacheDir()
     {
         if (in_array($this->environment, array('dev', 'test'))) {
-            return '/dev/shm/'.md5(getcwd()).'/cache/' .  $this->environment;
+            return '/dev/shm/'.md5(getcwd()).'/cache/'.$this->environment;
         }
 
         return parent::getCacheDir();

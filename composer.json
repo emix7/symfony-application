@@ -8,7 +8,7 @@
     },
     "require": {
         "php": "~5.4",
-        "symfony/symfony": "~2.5",
+        "symfony/symfony": "~2.6",
         "doctrine/orm": "~2.2",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
@@ -26,7 +26,6 @@
         "sonata-project/media-bundle": "~2.2",
         "sonata-project/user-bundle": "~2.2",
         "ircmaxell/password-compat": "~1.0",
-        "raulfraile/ladybug-bundle": "~1.0",
         "netvlies/form-bundle": "~1.0",
         "phpexcel/phpexcel": "~1.7",
         "phpword/phpword": "dev-master",

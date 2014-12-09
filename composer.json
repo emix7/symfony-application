@@ -4,7 +4,7 @@
     "type": "project",
     "description": "Endroid Symfony Application",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
     "require": {
         "php": "~5.4",
@@ -14,10 +14,9 @@
         "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "~2.1",
         "doctrine/migrations": "dev-master",
@@ -53,6 +52,7 @@
         "hautelook/alice-bundle": "~0.1"
     },
     "require-dev": {
+        "sensio/generator-bundle": "~2.3",
         "fabpot/php-cs-fixer": "~1.0",
         "behat/symfony2-extension": "~2.0",
         "behat/mink-extension": "~2.0",
@@ -61,13 +61,17 @@
         "phpunit/phpunit": "~4.0"
     },
     "scripts": {
+        "post-root-package-install": [
+            "SymfonyStandard\\Composer::hookRootPackageInstall"
+        ],
         "post-install-cmd": [
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
         ],
         "post-update-cmd": [
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
@@ -75,7 +79,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
         ]
     },
     "config": {
@@ -91,12 +96,12 @@
         "ckeditor-commit": "bba29309f93a1ace1e2e3a3bd086025975abbad0",
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "symfony-assets-install": "symlink",
+        "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "2.6-dev"
         }
     }
 }

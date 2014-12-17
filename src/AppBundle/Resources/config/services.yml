@@ -1,0 +1,9 @@
+services:
+    app.route_provider:
+        class: AppBundle\Service\RouteProvider
+        tags:
+            -  { name: route.provider }
+
+    app.create.object_mapper:
+        class: Midgard\CreatePHP\Mapper\DoctrineOrmMapper
+        arguments: [ cmf_create.map, @doctrine, null]

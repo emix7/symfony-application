@@ -1,0 +1,5 @@
+services:
+    sitemap.route_provider:
+        class: SitemapBundle\Service\RouteProvider
+        tags:
+            -  { name: route.provider }

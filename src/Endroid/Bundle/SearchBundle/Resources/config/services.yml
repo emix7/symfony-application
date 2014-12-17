@@ -1,6 +1,0 @@
-services:
-
-    endroid_search.twig.extension:
-          class: Endroid\Bundle\SearchBundle\Twig\Extension\SearchExtension
-          tags:
-              - { name: twig.extension }

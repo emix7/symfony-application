@@ -1,0 +1,11 @@
+services:
+    user.user_manager:
+        class: UserBundle\Model\UserManager
+        public: false
+        parent: fos_user.user_manager.default
+        calls:
+            - [ setContainer, [@service_container] ]
+
+    user.user.handler:
+        class: UserBundle\Handler\UserHandler
+        arguments: [ @doctrine.orm.entity_manager, UserBundle\Entity\User ]

@@ -3,7 +3,7 @@ security:
         connection: default
 
     encoders:
-        Endroid\Bundle\UserBundle\Entity\User:
+        UserBundle\Entity\User:
             algorithm: bcrypt
             cost: 15
 
@@ -13,7 +13,7 @@ security:
 
     providers:
         fos_userbundle:
-            id: endroid_user.user_manager
+            id: user.user_manager
 
     firewalls:
         dev:

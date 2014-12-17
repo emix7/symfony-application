@@ -1,0 +1,9 @@
+api_news:
+    resource:     "ApiBundle\\Controller\\NewsController"
+    type:         rest
+    name_prefix:  api_
+
+api_page:
+    resource:     "ApiBundle\\Controller\\PageController"
+    type:         rest
+    name_prefix:  api_

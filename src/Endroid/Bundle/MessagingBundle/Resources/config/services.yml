@@ -1,6 +1,0 @@
-services:
-
-    endroid_messaging.consumer.message:
-        class: Endroid\Bundle\MessagingBundle\Consumer\MessageConsumer
-        calls:
-            - [ setContainer, [ @service_container ] ]

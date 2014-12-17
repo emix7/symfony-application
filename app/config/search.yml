@@ -15,7 +15,7 @@ fos_elastica:
                         slug: ~
                     persistence:
                         driver: orm
-                        model: Endroid\Bundle\PageBundle\Entity\Page
+                        model: PageBundle\Entity\Page
                         provider: ~
                         finder: ~
                         listener: ~
@@ -28,7 +28,7 @@ fos_elastica:
                         slug: ~
                     persistence:
                         driver: orm
-                        model: Endroid\Bundle\NewsBundle\Entity\Article
+                        model: NewsBundle\Entity\Article
                         provider: ~
                         finder: ~
                         listener: ~

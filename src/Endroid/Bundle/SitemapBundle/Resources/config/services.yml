@@ -1,6 +1,0 @@
-services:
-
-    endroid_sitemap.route_provider:
-        class: Endroid\Bundle\SitemapBundle\Service\RouteProvider
-        tags:
-            -  { name: endroid_route.provider }

@@ -1,0 +1,19 @@
+services:
+    news.admin.article:
+        class: NewsBundle\Admin\ArticleAdmin
+        arguments: [null,  NewsBundle\Entity\Article, null]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Content, label: News }
+
+    news.route_provider:
+        class: NewsBundle\Service\RouteProvider
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            -  { name: route.provider }
+
+    news.article.handler:
+        class: NewsBundle\Handler\ArticleHandler
+        arguments: [ @doctrine.orm.entity_manager, NewsBundle\Entity\Article ]

@@ -34,7 +34,7 @@ twig:
         locales: %locales%
     form:
         resources:
-            - 'EndroidSiteBundle:Form:fields.html.twig'
+            - 'AppBundle:Form:fields.html.twig'
 
 assetic:
     debug:          %kernel.debug%
@@ -66,10 +66,10 @@ doctrine:
         query_cache_driver: redis
         filters:
             publishable:
-                class:   Endroid\Bundle\BehaviorBundle\Filter\PublishableFilter
+                class:   BehaviorBundle\Filter\PublishableFilter
                 enabled: false
             translation:
-                class:   Endroid\Bundle\BehaviorBundle\Filter\TranslationFilter
+                class:   BehaviorBundle\Filter\TranslationFilter
                 enabled: false
 
 swiftmailer:
@@ -78,47 +78,69 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        sonata.admin.block.admin_list:
-            contexts:   [admin]
-
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Endroid\Bundle\UserBundle\Entity\User
+    user_class: UserBundle\Entity\User
     group:
-        group_class: Endroid\Bundle\UserBundle\Entity\Group
+        group_class: UserBundle\Entity\Group
 
 sonata_user:
     security_acl: true
     manager_type: orm
     class:
-        user: Endroid\Bundle\UserBundle\Entity\User
-        group: Endroid\Bundle\UserBundle\Entity\Group
+        user: UserBundle\Entity\User
+        group: UserBundle\Entity\Group
 
-endroid_user:
-    whitelist: %whitelist%
+#sonata_admin:
+#    title: Application
+#    title_logo: /bundles/admin/img/logo-title.png
+#    templates:
+#        layout: AdminBundle::layout.html.twig
+#    extensions:
+#        behavior.publishable.extension:
+#            implements:
+#                - BehaviorBundle\Model\PublishableInterface
+#        behavior.sortable.extension:
+#            implements:
+#                - BehaviorBundle\Model\SortableInterface
+#        behavior.translation.extension:
+#            implements:
+#                - BehaviorBundle\Model\TranslationInterface
+#        behavior.traversable.extension:
+#            implements:
+#                - BehaviorBundle\Model\TraversableInterface
 
-sonata_admin:
-    title: Application
-    title_logo: /bundles/endroidadmin/img/logo-title.png
-    templates:
-        layout: EndroidAdminBundle::layout.html.twig
-    extensions:
-        endroid_behavior.publishable.extension:
-            implements:
-                - Endroid\Bundle\BehaviorBundle\Model\PublishableInterface
-        endroid_behavior.sortable.extension:
-            implements:
-                - Endroid\Bundle\BehaviorBundle\Model\SortableInterface
-        endroid_behavior.translation.extension:
-            implements:
-                - Endroid\Bundle\BehaviorBundle\Model\TranslationInterface
-        endroid_behavior.traversable.extension:
-            implements:
-                - Endroid\Bundle\BehaviorBundle\Model\TraversableInterface
+#sonata_block:
+#    default_contexts: [cms]
+#    blocks:
+#        sonata.admin.block.admin_list:
+#            contexts:   [admin]
+
+sonata_media:
+    default_context: default
+    db_driver: doctrine_orm
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+    cdn:
+        server:
+            path: /uploads/media
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     true
+    class:
+        media: MediaBundle\Entity\Media
+        gallery: MediaBundle\Entity\Gallery
+        gallery_has_media: MediaBundle\Entity\GalleryHasMedia
 
 knp_snappy:
     pdf:
@@ -154,31 +176,6 @@ stfalcon_tinymce:
                - "emoticons template paste textcolor"
             menubar: false
             height: "400px"
-
-sonata_media:
-    default_context: default
-    db_driver: doctrine_orm
-    contexts:
-        default:
-            providers:
-                - sonata.media.provider.dailymotion
-                - sonata.media.provider.youtube
-                - sonata.media.provider.image
-                - sonata.media.provider.file
-            formats:
-                small: { width: 100 , quality: 70}
-                big:   { width: 500 , quality: 70}
-    cdn:
-        server:
-            path: /uploads/media
-    filesystem:
-        local:
-            directory:  %kernel.root_dir%/../web/uploads/media
-            create:     true
-    class:
-        media: Endroid\Bundle\MediaBundle\Entity\Media
-        gallery: Endroid\Bundle\MediaBundle\Entity\Gallery
-        gallery_has_media: Endroid\Bundle\MediaBundle\Entity\GalleryHasMedia
 
 jms_i18n_routing:
     default_locale: %locale%
@@ -217,14 +214,14 @@ jms_serializer:
     metadata:
         directories:
             news:
-                namespace_prefix: "Endroid\\Bundle\\NewsBundle"
-                path: "@EndroidNewsBundle/Resources/config/serializer"
+                namespace_prefix: NewsBundle
+                path: "@NewsBundle/Resources/config/serializer"
             page:
-                namespace_prefix: "Endroid\\Bundle\\PageBundle"
-                path: "@EndroidPageBundle/Resources/config/serializer"
+                namespace_prefix: PageBundle
+                path: "@PageBundle/Resources/config/serializer"
             user:
-                namespace_prefix: "Endroid\\Bundle\\UserBundle"
-                path: "@EndroidUserBundle/Resources/config/serializer"
+                namespace_prefix: UserBundle
+                path: "@UserBundle/Resources/config/serializer"
 
 nelmio_api_doc:
     name: Symfony Application API
@@ -236,10 +233,10 @@ nelmio_api_doc:
 
 fos_oauth_server:
     db_driver:            orm
-    client_class:         Endroid\Bundle\OAuthBundle\Entity\Client
-    access_token_class:   Endroid\Bundle\OAuthBundle\Entity\AccessToken
-    refresh_token_class:  Endroid\Bundle\OAuthBundle\Entity\RefreshToken
-    auth_code_class:      Endroid\Bundle\OAuthBundle\Entity\AuthCode
+    client_class:         OAuthBundle\Entity\Client
+    access_token_class:   OAuthBundle\Entity\AccessToken
+    refresh_token_class:  OAuthBundle\Entity\RefreshToken
+    auth_code_class:      OAuthBundle\Entity\AuthCode
     service:
         user_provider:    fos_user.user_manager
 
@@ -283,7 +280,7 @@ cmf_create:
     security:
         role: ROLE_USER
         checker_service: ~
-    object_mapper_service_id: endroid_site.create.object_mapper
+    object_mapper_service_id: app.create.object_mapper
     persistence:
         phpcr:
             enabled: false
@@ -307,4 +304,7 @@ old_sound_rabbit_mq:
             connection: default
             exchange_options: { name: message, type: direct }
             queue_options: { name: message }
-            callback: endroid_messaging.consumer.message
+            callback: messaging.consumer.message
+
+user:
+    whitelist: %whitelist%

@@ -1,0 +1,3 @@
+news_article_index: /news/
+news_article_show: '/news/{slug}'
+search_search_index: /search/

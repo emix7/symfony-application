@@ -1,0 +1,5 @@
+services:
+    messaging.consumer.message:
+        class: MessagingBundle\Consumer\MessageConsumer
+        calls:
+            - [ setContainer, [ @service_container ] ]

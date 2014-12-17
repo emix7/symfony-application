@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 src: [
                     'web/assets/css/bootstrap.css',
                     'web/assets/css/font-awesome.css',
-                    'src/Endroid/Bundle/SiteBundle/Resources/public/css/*.css'
+                    'src/AppBundle/Resources/public/css/*.css'
                 ],
                 dest: 'web/assets/css/bundled.css'
             },
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                 src : [
                     'web/assets/js/jquery.js',
                     'web/assets/js/bootstrap.js',
-                    'src/Endroid/Bundle/SiteBundle/Resources/public/js/*.js'
+                    'src/AppBundle/Resources/public/js/*.js'
                 ],
                 dest: 'web/assets/js/bundled.js'
             }
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
         copy: {
             images: {
                 expand: true,
-                cwd: 'src/Endroid/Bundle/SiteBundle/Resources/public/img',
+                cwd: 'src/AppBundle/Resources/public/img',
                 src: '*',
                 dest: 'web/assets/images/'
             }

@@ -1,2 +1,0 @@
-suites:
-    SiteBundle      : { namespace: Endroid, spec_path: src/Endroid/Bundle/SiteBundle }

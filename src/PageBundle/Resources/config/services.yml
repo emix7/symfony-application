@@ -1,0 +1,19 @@
+services:
+    page.admin.page:
+        class: PageBundle\Admin\PageAdmin
+        arguments: [ null, PageBundle\Entity\Page, null]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Content, label: Pages }
+
+    page.route_provider:
+        class: PageBundle\Service\RouteProvider
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            -  { name: route.provider }
+
+    page.page.handler:
+        class: PageBundle\Handler\PageHandler
+        arguments: [ @doctrine.orm.entity_manager, PageBundle\Entity\Page ]

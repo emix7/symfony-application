@@ -8,7 +8,7 @@
 [![PayPayl donate button](http://img.shields.io/badge/paypal-donate-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RGH86QN825TWN "Keep me off the streets")
 
 Use this project if you want to quickly set up a basis for your web application. This application
-is built on [`endroid/symfony-standard`](https://github.com/symfony/symfony-standard) and extended
+is built on [`symfony/symfony-standard`](https://github.com/symfony/symfony-standard) and extended
 with popular and well-maintained community bundles and some example implementations to speed up the
 development process. You decide which functionalities you use, depending on the type of web
 application you are building. Browse the [`live demo`](http://symfony-application.endroid.nl/) and
@@ -23,7 +23,7 @@ to get a quick impression of the full package.
 ## Documentation
 
 The documentation is stored inside the SiteBundle.
-[Read the Documentation](https://github.com/endroid/symfony-application/tree/master/src/Endroid/Bundle/SiteBundle/Resources/doc/index.md).
+[Read the Documentation](https://github.com/endroid/symfony-application/tree/master/src/AppBundle/Resources/doc/index.md).
 
 ## Versioning
 

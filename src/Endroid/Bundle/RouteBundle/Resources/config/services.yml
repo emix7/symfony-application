@@ -1,4 +1,0 @@
-services:
-
-    endroid_route.collector:
-        class: Endroid\Bundle\RouteBundle\Service\RouteCollector

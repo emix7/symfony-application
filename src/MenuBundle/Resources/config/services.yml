@@ -1,0 +1,39 @@
+services:
+    menu.admin.menu:
+        class: MenuBundle\Admin\MenuAdmin
+        arguments: [null,  MenuBundle\Entity\MenuItem, AdminBundle:BaseAdmin]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Navigatie, label: Menus }
+
+    menu.twig.extension:
+        class: MenuBundle\Twig\Extension\MenuExtension
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: twig.extension }
+
+    menu.builder:
+        class: MenuBundle\Menu\Builder
+        arguments: ["@knp_menu.factory"]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+
+    menu.main:
+        class: Knp\Menu\MenuItem
+        factory_service: menu.builder
+        factory_method: createMenuMain
+        arguments: ["@request"]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: menu_main }
+
+    menu.footer:
+        class: Knp\Menu\MenuItem
+        factory_service: menu.builder
+        factory_method: createMenuFooter
+        arguments: ["@request"]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: menu_footer }

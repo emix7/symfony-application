@@ -92,30 +92,30 @@ sonata_user:
         user: UserBundle\Entity\User
         group: UserBundle\Entity\Group
 
-#sonata_admin:
-#    title: Application
-#    title_logo: /bundles/admin/img/logo-title.png
-#    templates:
-#        layout: AdminBundle::layout.html.twig
-#    extensions:
-#        behavior.publishable.extension:
-#            implements:
-#                - BehaviorBundle\Model\PublishableInterface
-#        behavior.sortable.extension:
-#            implements:
-#                - BehaviorBundle\Model\SortableInterface
-#        behavior.translation.extension:
-#            implements:
-#                - BehaviorBundle\Model\TranslationInterface
-#        behavior.traversable.extension:
-#            implements:
-#                - BehaviorBundle\Model\TraversableInterface
+sonata_admin:
+    title: Application
+    title_logo: /bundles/admin/img/logo-title.png
+    templates:
+        layout: AdminBundle::layout.html.twig
+    extensions:
+        behavior.publishable.extension:
+            implements:
+                - BehaviorBundle\Model\PublishableInterface
+        behavior.sortable.extension:
+            implements:
+                - BehaviorBundle\Model\SortableInterface
+        behavior.translation.extension:
+            implements:
+                - BehaviorBundle\Model\TranslationInterface
+        behavior.traversable.extension:
+            implements:
+                - BehaviorBundle\Model\TraversableInterface
 
-#sonata_block:
-#    default_contexts: [cms]
-#    blocks:
-#        sonata.admin.block.admin_list:
-#            contexts:   [admin]
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
 
 sonata_media:
     default_context: default

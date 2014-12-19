@@ -21,8 +21,9 @@
         "doctrine/doctrine-fixtures-bundle": "~2.1",
         "doctrine/migrations": "dev-master",
         "doctrine/doctrine-migrations-bundle": "dev-master",
+        "sonata-project/admin-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
-        "sonata-project/media-bundle": "~2.2",
+        "sonata-project/media-bundle": "~2.3",
         "sonata-project/user-bundle": "~2.2",
         "ircmaxell/password-compat": "~1.0",
         "netvlies/form-bundle": "~1.0",
@@ -38,7 +39,6 @@
         "jms/i18n-routing-bundle": "~1.0",
         "jms/serializer-bundle": "~0.13",
         "gedmo/doctrine-extensions": "~2.3",
-        "fp/lightopenid": "dev-master",
         "fp/openid-bundle": "~2.0",
         "endroid/google-analytics-bundle": "~1.0",
         "nelmio/api-doc-bundle": "~2.4",
@@ -59,6 +59,12 @@
         "behat/mink-browserkit-driver": "~1.1",
         "phpunit/phpunit": "~4.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/chartinger/SonataAdminBundle"
+        }
+    ],
     "scripts": {
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"

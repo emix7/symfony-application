@@ -22,14 +22,6 @@ class BaseAdmin extends Admin implements ContainerAwareInterface
     /**
      * {@inheritdoc}
      */
-    public function __construct($code, $class, $baseControllerName)
-    {
-        parent::_construct($code, $class, $baseControllerName);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function configureRoutes(RouteCollection $collection)
     {
         $collection->remove('export');

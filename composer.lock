@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9fb6df8a9d52b23a8086939b9ea6f74f",
+    "hash": "4f89b84b2667b9900547ca5171d53702",
     "packages": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633"
+                "reference": "d63108433190110c0ceb8be6460dda6f78348950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6a6bec0670bb6e71a263b08bc1b98ea242928633",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/d63108433190110c0ceb8be6460dda6f78348950",
+                "reference": "d63108433190110c0ceb8be6460dda6f78348950",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-09-25 16:45:30"
+            "time": "2014-12-18 18:30:08"
         },
         {
             "name": "doctrine/cache",
@@ -995,46 +995,6 @@
                 "symfony"
             ],
             "time": "2014-08-23 22:53:15"
-        },
-        {
-            "name": "fp/lightopenid",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:formapro/LightOpenID.git",
-                "reference": "9bd5d5a1d893b2e2fe340b877617a5c1fa9ee807"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/formapro/LightOpenID/zipball/9bd5d5a1d893b2e2fe340b877617a5c1fa9ee807",
-                "reference": "9bd5d5a1d893b2e2fe340b877617a5c1fa9ee807",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "openid.php",
-                    "provider/provider.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Mewp",
-                    "email": "mewp151+gitorious.org@gmail.com"
-                }
-            ],
-            "description": "A PHP 5 library for easy openid authentication",
-            "homepage": "https://github.com/formapro/LightOpenID",
-            "keywords": [
-                "Authentication",
-                "OpenId",
-                "security"
-            ],
-            "time": "2013-11-28 11:46:46"
         },
         {
             "name": "fp/openid-bundle",
@@ -2759,16 +2719,16 @@
         },
         {
             "name": "knplabs/knp-snappy",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/snappy.git",
-                "reference": "523d41047c117d973150c343dbd76160a045eeb6"
+                "reference": "4d46c5d2229981a20c45570d044ef9d926431a9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/523d41047c117d973150c343dbd76160a045eeb6",
-                "reference": "523d41047c117d973150c343dbd76160a045eeb6",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/4d46c5d2229981a20c45570d044ef9d926431a9b",
+                "reference": "4d46c5d2229981a20c45570d044ef9d926431a9b",
                 "shasum": ""
             },
             "require": {
@@ -2816,7 +2776,7 @@
                 "thumbnail",
                 "wkhtmltopdf"
             ],
-            "time": "2014-11-26 21:43:25"
+            "time": "2014-12-18 23:24:44"
         },
         {
             "name": "knplabs/knp-snappy-bundle",
@@ -4064,16 +4024,16 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "2.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "68a836e5dbcb89a9bec36586186d4fdf3fedf6f5"
+                "url": "https://github.com/chartinger/SonataAdminBundle.git",
+                "reference": "16d0bb697e0b40e1a014c3bc7fcbc1ccb891471c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/68a836e5dbcb89a9bec36586186d4fdf3fedf6f5",
-                "reference": "68a836e5dbcb89a9bec36586186d4fdf3fedf6f5",
+                "url": "https://api.github.com/repos/chartinger/SonataAdminBundle/zipball/16d0bb697e0b40e1a014c3bc7fcbc1ccb891471c",
+                "reference": "16d0bb697e0b40e1a014c3bc7fcbc1ccb891471c",
                 "shasum": ""
             },
             "require": {
@@ -4108,7 +4068,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev"
+                    "dev-master": "2.4.x-dev"
                 }
             },
             "autoload": {
@@ -4116,7 +4076,6 @@
                     "Sonata\\AdminBundle\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4139,7 +4098,10 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-09-09 13:52:07"
+            "support": {
+                "source": "https://github.com/chartinger/SonataAdminBundle/tree/master"
+            },
+            "time": "2014-10-15 16:12:57"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -6882,10 +6844,10 @@
     "stability-flags": {
         "doctrine/migrations": 20,
         "doctrine/doctrine-migrations-bundle": 20,
+        "sonata-project/admin-bundle": 20,
         "phpword/phpword": 20,
         "knplabs/knp-paginator-bundle": 20,
-        "knplabs/knp-components": 20,
-        "fp/lightopenid": 20
+        "knplabs/knp-components": 20
     },
     "prefer-stable": false,
     "platform": {

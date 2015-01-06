@@ -11,5 +11,10 @@ namespace RouteBundle\Service;
 
 interface RouteProviderInterface
 {
+    /**
+     * Returns the available routes.
+     *
+     * @return mixed
+     */
     public function getRoutes();
 }

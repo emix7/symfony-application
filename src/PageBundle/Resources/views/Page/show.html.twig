@@ -1,8 +1,6 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block title %}
-    {{ page.title|trans }} - {{ parent() }}
-{% endblock %}
+{% block title %}{{ page.title|trans }} - {{ parent() }}{% endblock %}
 
 {% block language_selector %}
     {% for locale in locales %}
@@ -23,4 +21,4 @@
         {{ show_form(page.form.id) }}
     {% endif %}
 
-{% endblock content %}
+{% endblock %}

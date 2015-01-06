@@ -4,175 +4,234 @@
 
     {% if app.request.locale == 'en' %}
 
-        <div class="jumbotron">
-            <h1>Symfony Application</h1>
-            <p>
-                This website demonstrates the <a href="https://github.com/endroid/symfony-application" target="_blank">endroid/symfony-application</a> project.
-                The goal of this project is providing an out-of-the-box working implementation for features used most throughout different projects.
-            </p>
-            <p><a href="https://github.com/endroid/symfony-application" target="_blank" class="btn btn-success btn-lg" role="button"><strong>Download from GitHub</strong></a></p>
+        <div class="body-content">
+            <h1>Symfony Application <small>by Endroid</small></h1>
+            <hr />
         </div>
 
         <div id="features" class="body-content">
             <div class="row">
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://symfony.com/doc/current/index.html" target="_blank">Symfony Standard Edition</a></p>
-                        Based on a recent Symfony 2 standard edition which serves as a skeleton for new applications.
-                    </blockquote>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">REST API</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/FriendsOfSymfony/FOSRestBundle">FOSRestBundle</a> provides a <a href="{{ path('nelmio_api_doc_index') }}">REST API</a> for external access to your application resources.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/endroid/symfony-application/tree/master/src/BehaviorBundle" target="_blank">Behaviors</a></p>
-                        Add behaviors like publishable, sluggable, sortable, timestampable, translatable and traversable to your entities.
-                    </blockquote>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">API Documentation Generator</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/nelmio/NelmioApiDocBundle">NelmioApiDocBundle</a> generates <a href="{{ path('nelmio_api_doc_index') }}">documentation</a> for your REST API from annotations.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/endroid/symfony-application/blob/master/src/AppBundle/Resources/doc/multilingualism.md" target="_blank">Multilingualism</a></p>
-                        Provides support for multilingual entities and routes and a language switch.
-                    </blockquote>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://www.elasticsearch.org/overview/" target="_blank">ElasticSearch</a></p>
-                        Provides distributed indexing of your entities. Translatable and publishable behaviors are taken into account by default.
-                    </blockquote>
-                </div>
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://sonata-project.org/bundles/admin/master/doc/index.html" target="_blank">Sonata Admin</a></p>
-                        Includes user, media and menu management and Google OpenID login.
-                    </blockquote>
-                </div>
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/formapro/FpOpenIdBundle" target="_blank">OpenID</a></p>
-                        Integrates support for login through OpenID. Google OpenID is enabled by default for Sonata Admin.
-                    </blockquote>
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">OAuth 2.0 Server</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/FriendsOfSymfony/FOSOAuthServerBundle">FOSOAuthServerBundle</a> allows clients to securely access restricted areas like an API.
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://behat.org/" target="_blank">BDD</a></p>
-                        Behavior-driven development is stimulated by providing tools like <a href="http://behat.org/" target="_blank">Behat</a> and <a href="http://www.phpspec.net/">phpSpec</a> and some basic features.
-                    </blockquote>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Sonata Admin Generator</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/sonata-project/SonataAdminBundle">Sonata Admin</a> allows you to quickly generate an <a href="{{ path('sonata_admin_dashboard') }}">admin section</a> to manage your content.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://travis-ci.org/" target="_blank">Quality monitoring</a></p>
-                        Integration with <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://scrutinizer-ci.com/">Scrutinizer</a> helps spotting issues when pushing new features.
-                    </blockquote>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Google OpenID</h3>
+                        </div>
+                        <div class="panel-body">
+                            Google OpenID is implemented and enabled by default for Sonata Admin using <a href="https://github.com/formapro/FpOpenIdBundle">FpOpenIdBundle</a>.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/raulfraile/LadybugBundle" target="_blank">Debugging</a></p>
-                        Dump any variable, object or resource to a detailed representation and get links to relevant documentation.
-                    </blockquote>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a></p>
-                        Includes a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
-                    </blockquote>
-                </div>
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/endroid/EndroidGoogleAnalyticsBundle" target="_bland">Google Analytics</a></p>
-                        Define tracking codes in your configuration and embed them in your Twig templates using the helper
-                    </blockquote>
-                </div>
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/endroid/symfony-application/tree/master/src/SitemapBundle" target="_blank">Sitemap</a></p>
-                        Provides an XML and HTML sitemap based on the available menu structure
-                    </blockquote>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">TinyMCE</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/stfalcon/TinymceBundle">TinymceBundle</a> integrates <a href="http://www.tinymce.com/">TinyMCE</a> to enable rich content editing.
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/FriendsOfSymfony/FOSOAuthServerBundle" target="_blank">OAuth 2.0 Server</a></p>
-                        Allow clients to securely access restricted areas of the application using the OAuth 2.0 authorization flow.
-                    </blockquote>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Twitter Bootstrap</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="http://getbootstrap.com/">Twitter Bootstrap</a> provides a HTML, CSS and JS framework. <a href="http://bootswatch.com/">Bootswatch</a> themes are included.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/FriendsOfSymfony/FOSRestBundle" target="_blank">REST API</a></p>
-                        Provide external access to resources by exposing them through an API. The OAuth 2.0 server to server flow
-                        protects calls to your REST API.
-                    </blockquote>
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Bower and Grunt support</h3>
+                        </div>
+                        <div class="panel-body">
+                            Front end packages can be managed using <a href="http://bower.io/">Bower</a> and combined and minified using <a href="http://gruntjs.com/">Grunt</a>.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/nelmio/NelmioApiDocBundle" target="_blank">API Documentation</a></p>
-                        Automatically generate API documentation and have a sandbox for testing your API. Take a look at the
-                        <a href="{{ path('nelmio_api_doc_index') }}">REST API documentation</a>.
-                    </blockquote>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/KnpLabs/KnpSnappyBundle" target="_blank">PDF and image generation</a></p>
-                        Offers generation of a PDF or image by rendering HTML through the WebKit engine
-                    </blockquote>
-                </div>
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/PHPOffice" target="_blank">Excel and Word support</a></p>
-                        Support for reading and writing spreadsheets and documents
-                    </blockquote>
-                </div>
-                <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/netvlies/NetvliesFormBundle" target="_bland">Form generator</a></p>
-                        Provides an UI for users to create forms, store results, send notifications and export form results
-                    </blockquote>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Google Analytics</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/endroid/EndroidGoogleAnalyticsBundle">EndroidGoogleAnalyticsBundle</a> integrates Google Analytics via configuration and Twig includes.
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://redis.io/" target="_blank">Redis client</a></p>
-                        Make calls to this blazingly fast key-value store easily by using the provided client service.
-                    </blockquote>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Behat</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="http://behat.org/">Behat</a> enables behaviour driven development through human-readable feature descriptions.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="http://www.tinymce.com/" target="_blank">TinyMCE</a></p>
-                        Integrates rich text editing tools for managing content.
-                    </blockquote>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">PHPUnit</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://phpunit.de/">PHPUnit</a> provides a testing framework for writing both functional and unit tests.
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
-                    <blockquote>
-                        <p><a href="https://github.com/doctrine/DoctrineMigrationsBundle" target="_blank">Doctrine migrations</a></p>
-                        Allows deployment of new versions of your database schema in a safe, easy and standardized way.
-                    </blockquote>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Continuous Integration</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://travis-ci.org/endroid/symfony-application">Travis CI</a> and <a href="https://scrutinizer-ci.com/">Scrutinizer</a> help spotting issues when pushing new features.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ElasticSearch</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="http://www.elasticsearch.org/">Elasticsearch</a> is a scalable full-text search engine which operates through a RESTful web interface.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">PDF Generation</h3>
+                        </div>
+                        <div class="panel-body">
+                            The <a href="https://github.com/wkhtmltopdf/wkhtmltopdf">wkhtmltopdf</a> and library enables rendering of HTML into PDF using the QT WebKit engine.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Excel and Word support</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/PHPOffice/PHPExcel">PHPExcel</a> and <a href="https://github.com/PHPOffice/PHPWord">PHPWord</a> add support for reading and writing spreadsheets and documents.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">OAuth 2.0 Client</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/hwi/HWIOAuthBundle">HWIOAuthBundle</a> adds support for authentication and supports many providers.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Redis Client</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/snc/SncRedisBundle">SncRedisBundle</a> and <a href="https://github.com/nrk/predis">Predis</a> allow to connect to the blazingly fast <a href="http://redis.io/">Redis</a> key-value store.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Form Generator</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/netvlies/NetvliesFormBundle">NetvliesFormBundle</a> for Sonata Admin provides a UI for administrators to create basic forms.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Inline Content Editing</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="https://github.com/symfony-cmf/CreateBundle">CreateBundle</a> integrates <a href="http://createjs.org/">Create.js</a> to enable inline content editing for your application.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Site Map Generator</h3>
+                        </div>
+                        <div class="panel-body">
+                            Provides an XML and HTML site map based on the available menu structure.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     {% elseif app.request.locale == 'nl' %}
 
-        <div class="jumbotron">
-            <h1>Symfony Application</h1>
-            <p>Welkom op de Nederlandstalige website. Ga naar de <a href="{{ path('app_home_index') }}">Engelstalige variant</a> voor meer informatie over dit project.</p>
+        <div class="body-content">
+            <h1>Symfony Application <small>by Endroid</small></h1>
         </div>
 
     {% endif %}
 
-    <div id="presentation" class="body-content">
-        <div class="row">
-            <div class="col-lg-12">
-                <script async class="speakerdeck-embed" data-id="0790ce6070890131413142631a834c32" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-            </div>
-        </div>
-    </div>
-
-{% endblock content %}
+{% endblock %}

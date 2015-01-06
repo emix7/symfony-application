@@ -46,10 +46,6 @@ class ArticleController extends Controller
      */
     public function showAction(Article $article)
     {
-        // Disable filters to allow for language switch
-        $this->container->get('doctrine')->getManager()->getFilters()->disable('publishable');
-        $this->container->get('doctrine')->getManager()->getFilters()->disable('translation');
-
         return array(
             'article' => $article,
         );

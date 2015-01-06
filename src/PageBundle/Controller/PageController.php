@@ -22,10 +22,6 @@ class PageController extends Controller
      */
     public function showAction(Page $page)
     {
-        // Disable filters to allow for language switch
-        $this->container->get('doctrine')->getManager()->getFilters()->disable('publishable');
-        $this->container->get('doctrine')->getManager()->getFilters()->disable('translation');
-
         return array(
             'page' => $page,
         );

@@ -1,80 +1,9 @@
-/**
- * TWITTER BOOTSTRAP TEMPLATE STYLES
- */
-
-/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 75px;
 }
-
-/* Set widths on the navbar form inputs since otherwise they're 100% wide */
-.navbar-form input[type="text"],
-.navbar-form input[type="password"] {
-    width: 180px;
+.panel-title {
+    font-weight: bold;
 }
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    /* Let the jumbotron breathe */
-    .jumbotron {
-        margin-top: 20px;
-    }
-    /* Remove padding from wrapping element since we kick in the grid classes here */
-    .body-content {
-        padding: 0;
-    }
-}
-
-/**
- * SYMFONY STANDARD DEMO STYLES
- */
-
-#language-selector {
-    margin: 13px;
-}
-
-#language-selector a {
-    margin-left: 5px;
-}
-
-footer .navbar-nav a {
-    padding: 0 15px 0 0;
-}
-
-footer .navbar-nav .active a, footer .navbar-nav .active a:hover {
-    background-color: #fff;
-}
-
-.form-control[type="radio"] {
-    width: auto;
-    display: inline;
-    margin: 0 5px;
-    border: 5px solid #ccc;
-    box-shadow: none;
-}
-
-.jumbotron {
-    text-align: center;
-    padding: 10px 50px;
-    border-radius: 10px;
-    background-color: #2980b9;
-    color: #fff;
-}
-
-.jumbotron a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.jumbotron .btn {
-    margin-top: 10px;
-    text-decoration: none;
+.copyright {
+    padding-top: 5px;
 }

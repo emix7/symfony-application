@@ -32,9 +32,10 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         locales: %locales%
+        locale_flags: { nl: 'nl', en: 'gb', de: 'de', fr: 'fr' }
     form:
         resources:
-            - 'AppBundle:Form:fields.html.twig'
+            - 'bootstrap_3_layout.html.twig'
 
 assetic:
     debug:          %kernel.debug%

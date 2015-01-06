@@ -9,13 +9,19 @@ module.exports = function (grunt) {
             scripts: {
                 files: {
                     'js/jquery.js': 'jquery/dist/jquery.js',
-                    'js/bootstrap.js': 'bootstrap/dist/js/bootstrap.js'
+                    'js/bootstrap.js': 'bootstrap/dist/js/bootstrap.js',
+                    'js/toastr.js': 'toastr/toastr.js',
+                    'js/rrssb.js': 'RRSSB/js/rrssb.js'
                 }
             },
             stylesheets: {
                 files: {
-                    'css/bootstrap.css': 'bootstrap/dist/css/bootstrap.css',
-                    'css/font-awesome.css': 'font-awesome/css/font-awesome.css'
+                    'css/bootstrap.css': 'bootswatch/flatly/bootstrap.css',
+                    'css/font-awesome.css': 'font-awesome/css/font-awesome.css',
+                    'css/toastr.css': 'toastr/toastr.css',
+                    'css/rrssb.css': 'RRSSB/css/rrssb.css',
+                    'css/flag-icon.css': 'flag-icon-css/css/flag-icon.css',
+                    'css/gh-fork-ribbon.css': 'github-fork-ribbon-css/gh-fork-ribbon.css'
                 }
             },
             fonts: {
@@ -45,6 +51,10 @@ module.exports = function (grunt) {
                 src: [
                     'web/assets/css/bootstrap.css',
                     'web/assets/css/font-awesome.css',
+                    'web/assets/css/toastr.css',
+                    'web/assets/css/rrssb.css',
+                    'web/assets/css/flag-icon.css',
+                    'web/assets/css/gh-fork-ribbon.css',
                     'src/AppBundle/Resources/public/css/*.css'
                 ],
                 dest: 'web/assets/css/bundled.css'
@@ -53,6 +63,9 @@ module.exports = function (grunt) {
                 src : [
                     'web/assets/js/jquery.js',
                     'web/assets/js/bootstrap.js',
+                    'web/assets/js/material.js',
+                    'web/assets/js/toastr.js',
+                    'web/assets/js/rrssb.js',
                     'src/AppBundle/Resources/public/js/*.js'
                 ],
                 dest: 'web/assets/js/bundled.js'

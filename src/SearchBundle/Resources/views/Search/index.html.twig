@@ -8,27 +8,31 @@
 
     {% if query == '' %}
 
-        {{ 'no_search_term'|trans }}
+        <p>{{ 'no_search_term'|trans }}.</p>
 
     {% elseif pagination|length == 0 %}
 
-        {{ 'no_results_for_query'|trans }} <em>{{ query }}</em>.
+        <p>{{ 'no_results_for_query'|trans }} <em>{{ query }}</em>.</p>
 
     {% else %}
 
-        {{ 'results_for_query'|trans }} <em>{{ query }}</em>.
+        <p>{{ 'results_for_query'|trans }} <em>{{ query }}</em>.</p>
 
         {% for result in pagination %}
 
-            {% if result|class == 'PageBundle\\Entity\\Page' %}
+            <div class="well well-large">
 
-                {{ include('PageBundle:Page:search.html.twig', { 'page': result }) }}
+                {% if result|class == 'PageBundle\\Entity\\Page' %}
 
-            {% elseif result|class == 'NewsBundle\\Entity\\Article' %}
+                    {{ include('PageBundle:Page:search.html.twig', { 'page': result }) }}
 
-                {{ include('NewsBundle:Article:search.html.twig', { 'article': result }) }}
+                {% elseif result|class == 'NewsBundle\\Entity\\Article' %}
 
-            {% endif %}
+                    {{ include('NewsBundle:Article:search.html.twig', { 'article': result }) }}
+
+                {% endif %}
+
+            </div>
 
         {% endfor %}
 

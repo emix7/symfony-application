@@ -30,13 +30,17 @@
 
             {% block stylesheets %}
 
-                <link href="/assets/css/bundled.css" type="text/css" rel="stylesheet" media="screen" />
+                <link href="/assets/css/bundled.min.css" type="text/css" rel="stylesheet" media="screen" />
 
-                {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+                {% if is_granted('ROLE_ADMIN') %}
 
-            {% endblock stylesheets %}
+                    {% include 'CmfCreateBundle::includecssfiles.html.twig' %}
 
-        {% endblock head %}
+                {% endif %}
+
+            {% endblock %}
+
+        {% endblock %}
 
         {{ google_analytics_tracker('default') }}
 
@@ -45,36 +49,33 @@
 
         {% block body %}
 
-            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="github-fork-ribbon-wrapper right">
+                <div class="github-fork-ribbon">
+                    <a href="https://github.com/endroid/symfony-application">Fork me on GitHub</a>
+                </div>
+            </div>
+
+            <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
+                        <a class="navbar-brand" href="{{ path('app_home_index') }}">Symfony Application</a>
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{{ path('app_home_index') }}">Symfony Application</a>
                     </div>
-                    <div class="navbar-collapse collapse">
+                    <div class="navbar-collapse collapse" id="navbar-main">
 
-                        {{ knp_menu_render('menu_main') }}
+                        {{ knp_menu_render('menu_main', { currentClass: 'active' }) }}
 
-                        <div class="pull-right">
-                            {% include "SearchBundle:Search:form.html.twig" %}
-                        </div>
+                        {% block languages %}
 
-                        {% if locales|length > 1 %}
+                            {% render(controller('AppBundle:Language:switch', { route: app.request.attributes.get('_route'), params: app.request.attributes.get('_route_params') })) %}
 
-                            <div id="language-selector" class="pull-right">
-                                {% block language_selector %}
-                                    {% for locale in locales %}
-                                        <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': locale})) }}"><img src="{{ asset('bundles/app/img/flag_' ~ locale ~ '.png') }}" width="35" /></a>
-                                    {% endfor %}
-                                {% endblock %}
-                            </div>
+                        {% endblock %}
 
-                        {% endif %}
+                        {% include 'SearchBundle:Search:form.html.twig' %}
 
                     </div>
                 </div>
@@ -84,29 +85,80 @@
 
                 {% block content %}
 
-                {% endblock content %}
+                {% endblock %}
+
+                <hr />
+
+
+
+                <div class="pull-right">
+
+                    {% include 'AppBundle:Block:share.html.twig' with {
+                        providers: ['googleplus', 'facebook', 'linkedin', 'twitter', 'github'],
+                        github_url: 'https://github.com/endroid/symfony-application',
+                        title: block('title'),
+                        url: app.request.uri
+                    } %}
+
+                </div>
+
+                <div class="pull-left">
+                    <div class="copyright">&copy; Symfony Application {{ 'now'|date('Y') }}</div>
+                </div>
 
             </div>
 
-            <div class="container">
-                <hr>
-                <footer>
-                    <p class="pull-right">&copy; Symfony Application {{ 'now'|date('Y') }}</p>
-                    <p>
-                        {{ knp_menu_render('menu_footer') }}
-                    </p>
-                </footer>
-            </div>
+            <br />
+
+            {#<div class="container">#}
+                {#<div class="row">#}
+                    {#<div class="col-md-9">#}
+                        {#<div class="footer-nav">#}
+
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="col-md-3 text-right">#}
+                        {#<div class="copyright">&copy; Symfony Application {{ 'now'|date('Y') }}</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
 
             {% block javascripts %}
 
                 <script src="/assets/js/bundled.js" type="text/javascript"></script>
 
-                {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': app.request.locale})) %}
+                {% if is_granted('ROLE_ADMIN') %}
 
-            {% endblock javascripts %}
+                    {% render(controller('cmf_create.jsloader.controller:includeJSFilesAction', {'_locale': app.request.locale})) %}
 
-        {% endblock body %}
+                {% endif %}
+
+                <script>
+                    $(document).ready(function() {
+                        toastr.options = {
+                            'positionClass': 'toast-top-right',
+                            'progressBar': true
+                        };
+                        {% for flashMessage in app.session.flashbag.get('error') %}
+                            toastr.error("{{ flashMessage|escape('js') }}");
+                        {% endfor %}
+                        {% for flashMessage in app.session.flashbag.get('notice') %}
+                            toastr.warning("{{ flashMessage|escape('js') }}");
+                        {% endfor %}
+                        {% for flashMessage in app.session.flashbag.get('success') %}
+                            toastr.success("{{ flashMessage|escape('js') }}");
+                        {% endfor %}
+                        {% for flashMessage in app.session.flashbag.get('info') %}
+                            toastr.info("{{ flashMessage|escape('js') }}");
+                        {% endfor %}
+
+                    });
+                </script>
+
+            {% endblock %}
+
+        {% endblock %}
 
     </body>
+
 </html>

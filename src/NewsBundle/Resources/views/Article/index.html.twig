@@ -8,7 +8,7 @@
 
         <div class="well well-large">
             <h2>{{ article.title }}</h2>
-            <p>{{ article.translatable.date|date('Y-m-d') }}</p>
+            <p>{{ article.translatable.date|localizeddate('long', 'none', app.request.locale) }}</p>
             <p>{% thumbnail article.translatable.image, 'small' %}</p>
             <p>{{ article.content|striptags }}</p>
             <p><a href="{{ path('news_article_show', { slug: article.slug }) }}">{{ 'read_more'|trans }}</a></p>
@@ -18,4 +18,4 @@
 
     {{ knp_pagination_render(pagination) }}
 
-{% endblock content %}
+{% endblock %}

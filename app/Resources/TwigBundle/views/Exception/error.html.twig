@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Pagina niet gevonden</title>
-</head>
-<body>
-<h1>Sorry, de pagina die u zoekt is niet beschikbaar</h1>
-<h2>Klik <a href="{{ path('app_home_index') }}"></a> om terug te keren naar de homepage.</h2>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>An Error Occurred: {{ status_text }}</title>
+        <link href="/assets/css/bundled.css" type="text/css" rel="stylesheet" media="screen" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Oops! An Error Occurred</h1>
+                <p class="lead">The server returned a "{{ status_code }} {{ status_text }}".</p>
+            </div>
+        </div>
+    </body>
 </html>

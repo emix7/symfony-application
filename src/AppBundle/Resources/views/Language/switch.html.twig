@@ -1,0 +1,14 @@
+{% if urls|length > 0 %}
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span class="flag-icon flag-icon-{{ locale_flags[app.request.locale] }}"></span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                {% for locale, url in urls %}
+                    <li><a href="{{ url }}"><span class="flag-icon flag-icon-{{ locale_flags[locale] }}"></span> {{ locale|upper }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+
+{% endif %}

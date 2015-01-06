@@ -2,23 +2,27 @@
 
 {% block title %}{{ page.title|trans }} - {{ parent() }}{% endblock %}
 
-{% block language_selector %}
-    {% for locale in locales %}
-        <a href="{{ path('page_page_show', { slug: page.translatable.translation(locale).slug, _locale: locale }) }}"><img src="{{ asset('bundles/app/img/flag_' ~ locale ~ '.png') }}" width="35" /></a>
-    {% endfor %}
+{% block languages %}
+
+    {% render(controller('AppBundle:Language:switch', { route: 'page_page_show', params: { slug: 'page.slug' }, translatables: { 'page': page }})) %}
+
 {% endblock %}
 
 {% block content %}
 
     {% createphp page as="rdf" noautotag %}
+
         <div {{ createphp_attributes(rdf) }}>
-            <h1 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h1>
+            <h1 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h1>
             <div {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</div>
         </div>
+
     {% endcreatephp %}
 
     {% if page.form %}
+
         {{ show_form(page.form.id) }}
+
     {% endif %}
 
 {% endblock %}

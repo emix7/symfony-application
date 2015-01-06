@@ -1,20 +1,23 @@
 {% extends 'NewsBundle::layout.html.twig' %}
 
-{% block title %}
-    {{ article.title|trans }} - {{ parent() }}
-{% endblock %}
+{% block title %}{{ article.title|trans }} - {{ parent() }}{% endblock %}
 
-{% block language_selector %}
-    {% for locale in locales %}
-        <a href="{{ path('news_article_show', { slug: article.translatable.translation(locale).slug, _locale: locale }) }}"><img src="{{ asset('bundles/app/img/flag_' ~ locale ~ '.png') }}" width="35" /></a>
-    {% endfor %}
+{% block languages %}
+
+    {% render(controller('AppBundle:Language:switch', { route: 'news_article_show', params: { slug: 'article.slug' }, translatables: { 'article': article }})) %}
+
 {% endblock %}
 
 {% block content %}
 
-    <h1>{{ article.title }}</h1>
-    {{ article.content|raw }}
-    <p>{% thumbnail article.translatable.image, 'big' %}</p>
-    <a href="{{ path('news_article_index') }}">{{ 'back'|trans }}</a>
+    {% createphp article as="rdf" noautotag %}
+        <div {{ createphp_attributes(rdf) }}>
+            <h1 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h1>
+            <p>{{ article.translatable.date|localizeddate('long', 'none', app.request.locale) }}</p>
+            <div {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</div>
+            <p>{% thumbnail article.translatable.image, 'big' %}</p>
+            <p><a href="{{ path('news_article_index') }}">{{ 'back'|trans }}</a></p>
+        </div>
+    {% endcreatephp %}
 
-{% endblock content %}
+{% endblock %}

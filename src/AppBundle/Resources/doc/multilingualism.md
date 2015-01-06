@@ -115,9 +115,9 @@ enable switching between multilingual entities.
 ``` twig
 // src/AppBundle/Resources/views/layout.html.twig
 
-{% block language_selector %}
-    {% for locale in locales %}
-        <a href="{{ path('page_page_show', { slug: page.translatable.translation(locale).slug, _locale: locale }) }}"><img src="{{ asset('bundles/app/img/flag_' ~ locale ~ '.png') }}" width="35" height="20" /></a>
-    {% endfor %}
+{% block languages %}
+
+    {% render(controller('AppBundle:Language:switch', { route: 'page_page_show', params: { slug: 'page.slug' }, translatables: { 'page': page }})) %}
+
 {% endblock %}
 ```

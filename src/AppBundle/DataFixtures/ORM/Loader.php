@@ -26,4 +26,15 @@ class Loader extends DataFixtureLoader
             __DIR__.'/users.yml',
         );
     }
+
+    /**
+     * Returns a route to a page.
+     *
+     * @param $id
+     * @return string
+     */
+    public function pageRoute($id)
+    {
+        return 'page_page_show_'.$id;
+    }
 }

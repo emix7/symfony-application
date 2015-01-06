@@ -5,23 +5,23 @@ PageBundle\Entity\PageTranslatable:
 PageBundle\Entity\Page:
     page_about_us_en:
         title: About us
-        content: <p><text(750)></p>
+        content: <p><text(1000)></p>
         locale: en
         translatable: @page_translatable_about_us
     page_contact_en:
         title: Contact
-        content: <p><text(750)></p>
+        content: <p><text(500)></p>
         locale: en
         translatable: @page_translatable_contact
         form: @form_contact_en
     page_about_us_nl:
         title: Over ons
-        content: <p><text(750)></p>
+        content: <p><text(1000)></p>
         locale: nl
         translatable: @page_translatable_about_us
     page_contact_nl:
         title: Contact
-        content: <p><text(750)></p>
+        content: <p><text(500)></p>
         locale: nl
         translatable: @page_translatable_contact
         form: @form_contact_nl

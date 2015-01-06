@@ -51,9 +51,11 @@ Netvlies\Bundle\NetvliesFormBundle\Entity\Field:
 Netvlies\Bundle\NetvliesFormBundle\Entity\Form:
     form_contact_en:
         label: Contact form
-        successAction: url
+        successAction: message
+        successMessage: Thank you for filling out this form.
         fields: [ @field_contact_salutation_en, @field_contact_name_en, @field_contact_email_en, @field_contact_message_en ]
     form_contact_nl:
         label: Contactformulier
-        successAction: url
+        successAction: message
+        successMessage: Dank u voor het invullen van dit formulier.
         fields: [ @field_contact_salutation_nl, @field_contact_name_nl, @field_contact_email_nl, @field_contact_message_nl ]

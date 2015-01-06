@@ -17,12 +17,12 @@ to get a quick impression of the full package.
 
 ## Live demo
 
-  * Front end - [`symfony-application.endroid.nl`](http://symfony-application.endroid.nl/)
+  * Application - [`symfony-application.endroid.nl`](http://symfony-application.endroid.nl/)
   * Admin - [`symfony-application.endroid.nl/admin/dashboard`](http://symfony-application.endroid.nl/admin/dashboard) (admin/admin)
 
 ## Documentation
 
-The documentation is stored inside the SiteBundle.
+The documentation is stored inside the AppBundle.
 [Read the Documentation](https://github.com/endroid/symfony-application/tree/master/src/AppBundle/Resources/doc/index.md).
 
 ## Versioning

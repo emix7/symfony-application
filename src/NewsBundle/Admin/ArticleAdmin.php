@@ -10,6 +10,7 @@
 namespace NewsBundle\Admin;
 
 use AdminBundle\Admin\BaseAdmin;
+use DateTime;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 
@@ -28,7 +29,7 @@ class ArticleAdmin extends BaseAdmin
 
         $translatable = $subject->getTranslatable();
         if ($translatable->getDate() === null) {
-            $translatable->setDate(new \DateTime());
+            $translatable->setDate(new DateTime());
         }
 
         $formMapper

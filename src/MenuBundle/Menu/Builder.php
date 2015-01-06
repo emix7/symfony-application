@@ -44,12 +44,24 @@ class Builder extends ContainerAware
         foreach ($menuItem->getChildren() as $child) {
             $childRoute = $this->container->get('route.collector')->getRouteByKey($child->getRouteKey());
             if ($childRoute === null) {
-                continue;
+                $item = $menu->addChild($child->getTag());
+                $item->setAttribute('class', 'dropdown');
+                $item->setChildrenAttribute('class', 'dropdown-menu');
+            } else {
+                $item = $menu->addChild($childRoute->getLabel(), array(
+                    'route' => $childRoute->getName(),
+                    'routeParameters' => $childRoute->getParameters() + array('_locale' => $this->container->get('request')->getLocale()),
+                ));
             }
-            $menu->addChild($childRoute->getLabel(), array(
-                'route' => $childRoute->getName(),
-                'routeParameters' => $childRoute->getParameters() + array('_locale' => $this->container->get('request')->getLocale()),
-            ));
+            if ($child->getRouteKey() == null) {
+                foreach ($child->getChildren() as $sub) {
+                    $childRoute = $this->container->get('route.collector')->getRouteByKey($sub->getRouteKey());
+                    $item->addChild($childRoute->getLabel(), array(
+                        'route' => $childRoute->getName(),
+                        'routeParameters' => $childRoute->getParameters() + array('_locale' => $this->container->get('request')->getLocale()),
+                    ));
+                }
+            }
         }
 
         return $menu;

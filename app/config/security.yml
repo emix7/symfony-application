@@ -52,9 +52,9 @@ security:
             context:            user
             form_login:
                 provider:       fos_userbundle
-                login_path:     /admin/login
+                login_path:     fos_user_security_login
+                check_path:     fos_user_security_check
                 use_forward:    false
-                check_path:     /admin/login_check
                 failure_path:   null
             logout:
                 path:           /admin/logout

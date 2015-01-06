@@ -17,12 +17,14 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
+        "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "~2.1",
         "doctrine/migrations": "dev-master",
         "doctrine/doctrine-migrations-bundle": "dev-master",
+        "sonata-project/core-bundle": "dev-master",
         "sonata-project/admin-bundle": "dev-master",
-        "sonata-project/doctrine-orm-admin-bundle": "~2.3",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/media-bundle": "~2.3",
         "sonata-project/user-bundle": "~2.2",
         "ircmaxell/password-compat": "~1.0",
@@ -34,8 +36,7 @@
         "stfalcon/tinymce-bundle": "~0.2",
         "friendsofsymfony/elastica-bundle": "~3.0",
         "friendsofsymfony/rest-bundle": "~1.1",
-        "knplabs/knp-paginator-bundle": "~2.3@dev",
-        "knplabs/knp-components": "~1.2@dev",
+        "knplabs/knp-paginator-bundle": "~2.3",
         "jms/i18n-routing-bundle": "~1.0",
         "jms/serializer-bundle": "~0.13",
         "gedmo/doctrine-extensions": "~2.3",
@@ -52,19 +53,12 @@
         "hautelook/alice-bundle": "~0.1"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3",
         "fabpot/php-cs-fixer": "~1.0",
         "behat/symfony2-extension": "~2.0",
         "behat/mink-extension": "~2.0",
         "behat/mink-browserkit-driver": "~1.1",
         "phpunit/phpunit": "~4.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/chartinger/SonataAdminBundle"
-        }
-    ],
     "scripts": {
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"

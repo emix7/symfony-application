@@ -116,6 +116,9 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
+        sonata.user.block.menu:
+        sonata.user.block.account:
+        sonata.block.service.text:
 
 sonata_media:
     default_context: default
@@ -158,6 +161,10 @@ knp_snappy:
         enabled:    true
         binary:     %wkhtmltoimage_path%
         options:    []
+
+knp_menu:
+    twig:
+        template: MenuBundle::knp_menu.html.twig
 
 knp_paginator:
     template:

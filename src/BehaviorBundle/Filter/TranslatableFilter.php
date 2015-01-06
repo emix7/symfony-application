@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
-class PublishableFilter extends SQLFilter implements ContainerAwareInterface
+class TranslatableFilter extends SQLFilter implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
@@ -26,27 +26,28 @@ class PublishableFilter extends SQLFilter implements ContainerAwareInterface
      */
     public function addFilterConstraint(ClassMetadata $target, $alias)
     {
-        if (!$target->reflClass->implementsInterface('BehaviorBundle\Model\PublishableInterface')) {
+        if (!$target->reflClass->implementsInterface('BehaviorBundle\Model\TranslationInterface')) {
             return '';
         }
 
-        return $alias.'.published = 1';
+        return $alias.'.locale = '.$this->getParameter('locale');
     }
 
     /**
-     * Adds the publishable filter and enables it when needed.
+     * Adds the translatable filter and enables it when needed.
      *
      * @param FilterControllerEvent $event
      */
     public function onKernelController(FilterControllerEvent $event)
     {
-        $this->getEntityManager()->getConfiguration()->addFilter('publishable_filter', 'BehaviorBundle\\Filter\\PublishableFilter');
+        $this->getEntityManager()->getConfiguration()->addFilter('translatable_filter', 'BehaviorBundle\\Filter\\TranslatableFilter');
 
         if (strpos($this->getRequest()->getPathInfo(), '/admin') === 0) {
             return;
         }
 
-        $this->getEntityManager()->getFilters()->enable('publishable_filter');
+        $filter = $this->getEntityManager()->getFilters()->enable('translatable_filter');
+        $filter->setParameter('locale', $this->container->get('request')->getLocale());
     }
 
     /**

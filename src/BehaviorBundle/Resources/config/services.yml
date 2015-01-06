@@ -4,12 +4,13 @@ services:
         tags:
             - { name: sonata.admin.extension }
 
-    behavior.publishable.listener:
-          class: BehaviorBundle\EventListener\PublishableListener
-          calls:
-              - [ setContainer, [ @service_container ] ]
-          tags:
-              - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+    behavior.publishable.filter:
+        class: BehaviorBundle\Filter\PublishableFilter
+        arguments: [ @doctrine.orm.entity_manager ]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
 
     behavior.sluggable.listener:
         class: BehaviorBundle\EventListener\SluggableListener
@@ -33,20 +34,25 @@ services:
             - { name: doctrine.event_listener, event: prePersist, method: onPrePersist }
             - { name: doctrine.event_listener, event: preUpdate, method: onPreUpdate }
 
-    behavior.translation.listener:
-          class: BehaviorBundle\EventListener\TranslationListener
-          calls:
-              - [ setContainer, [ @service_container ] ]
-          tags:
-              - { name: doctrine.event_listener, event: loadClassMetadata , method: onLoadClassMetadata }
-              - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+    behavior.translatable.filter:
+        class: BehaviorBundle\Filter\TranslatableFilter
+        arguments: [ @doctrine.orm.entity_manager ]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+
+    behavior.translatable.listener:
+        class: BehaviorBundle\EventListener\TranslatableListener
+        tags:
+            - { name: doctrine.event_listener, event: loadClassMetadata , method: onLoadClassMetadata }
 
     behavior.translation.extension:
-            class: BehaviorBundle\Admin\Extension\TranslationAdminExtension
-            calls:
-                - [ setContainer, [ @service_container ] ]
-            tags:
-                - { name: sonata.admin.extension }
+        class: BehaviorBundle\Admin\Extension\TranslationAdminExtension
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: sonata.admin.extension }
 
     behavior.traversable.listener:
         class: BehaviorBundle\EventListener\TraversableListener

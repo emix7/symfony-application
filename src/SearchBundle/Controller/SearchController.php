@@ -63,7 +63,7 @@ class SearchController extends Controller
 
         $query = new Query();
         $query->setQuery($queryString);
-        $query->setFilter($filter);
+        $query->setPostFilter($filter);
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(

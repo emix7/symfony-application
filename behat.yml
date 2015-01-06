@@ -18,3 +18,6 @@ default:
         pdf:
             type: symfony_bundle
             bundle: PdfBundle
+        search:
+            type: symfony_bundle
+            bundle: SearchBundle

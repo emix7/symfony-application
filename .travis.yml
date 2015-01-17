@@ -17,7 +17,7 @@ before_install:
     - sudo rm -rf /dev/shm && sudo ln -s /run/shm /dev/shm
 
 install:
-    - sudo curl -O 'http://skylink.dl.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-precise-amd64.deb'
+    - sudo curl -O 'http://heanet.dl.sourceforge.net/project/wkhtmltopdf/archive/0.12.1/wkhtmltox-0.12.1_linux-precise-amd64.deb'
     - sudo dpkg -i ./wkhtmltox-0.12.1_linux-precise-amd64.deb
     - sudo apt-get install -y --force-yes openssl build-essential xorg libssl-dev apache2 libapache2-mod-php5 php5-curl php5-intl > /dev/null
     - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default

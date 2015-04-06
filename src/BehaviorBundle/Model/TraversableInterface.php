@@ -17,6 +17,7 @@ interface TraversableInterface
      * Sets the parent.
      *
      * @param $parent
+     *
      * @return Object
      */
     public function setParent(TraversableInterface $parent);
@@ -38,7 +39,8 @@ interface TraversableInterface
     /**
      * Checks if a specific child exists.
      *
-     * @param  TraversableInterface $child
+     * @param TraversableInterface $child
+     *
      * @return bool
      */
     public function hasChild(TraversableInterface $child);
@@ -47,6 +49,7 @@ interface TraversableInterface
      * Adds a child.
      *
      * @param $child
+     *
      * @return Object
      */
     public function addChild(TraversableInterface $child);
@@ -54,7 +57,8 @@ interface TraversableInterface
     /**
      * Removes a child.
      *
-     * @param  TraversableInterface $child
+     * @param TraversableInterface $child
+     *
      * @return Object
      */
     public function removeChild(TraversableInterface $child);

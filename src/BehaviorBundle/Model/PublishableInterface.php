@@ -15,6 +15,7 @@ interface PublishableInterface
      * Sets the published status.
      *
      * @param $published
+     *
      * @return mixed
      */
     public function setPublished($published);

@@ -46,6 +46,10 @@ class PublishableFilter extends SQLFilter implements ContainerAwareInterface
             return;
         }
 
+        if (strpos($this->getRequest()->getPathInfo(), '/api') === 0) {
+            return;
+        }
+
         $this->getEntityManager()->getFilters()->enable('publishable_filter');
     }
 

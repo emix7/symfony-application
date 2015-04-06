@@ -15,9 +15,18 @@ default:
         messaging:
             type: symfony_bundle
             bundle: MessagingBundle
+        news:
+            type: symfony_bundle
+            bundle: NewsBundle
+        oauth:
+            type: symfony_bundle
+            bundle: OAuthBundle
         pdf:
             type: symfony_bundle
             bundle: PdfBundle
         search:
             type: symfony_bundle
             bundle: SearchBundle
+        wsse:
+            type: symfony_bundle
+            bundle: WsseBundle

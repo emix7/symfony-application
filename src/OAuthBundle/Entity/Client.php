@@ -11,6 +11,7 @@ namespace OAuthBundle\Entity;
 
 use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Entity\User;
 
 /**
  * @ORM\Entity
@@ -24,4 +25,35 @@ class Client extends BaseClient
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="clients", cascade={"persist", "remove"})
+     */
+    protected $user;
+
+    /**
+     * Sets the user.
+     *
+     * @param $user
+     *
+     * @return Client
+     */
+    public function setUser(User $user)
+    {
+        if (!$user->hasClient($this)) {
+            $user->addClient($this);
+        }
+
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Returns the client.
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

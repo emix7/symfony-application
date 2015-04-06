@@ -10,30 +10,101 @@
 namespace NewsBundle\Handler;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use NewsBundle\Model\ArticleInterface;
+use Doctrine\Common\Persistence\ObjectRepository;
+use NewsBundle\Entity\Article;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ArticleHandler implements ArticleHandlerInterface
+class ArticleHandler
 {
-    protected $om;
+    /**
+     * @var ObjectManager
+     */
+    protected $objectManager;
+
+    /**
+     * @var string
+     */
     protected $entityClass;
+
+    /**
+     * @var ObjectRepository
+     */
     protected $repository;
 
-    public function __construct(ObjectManager $om, $entityClass)
+    /**
+     * Class constructor.
+     *
+     * @param ObjectManager $objectManager
+     * @param $entityClass
+     */
+    public function __construct(ObjectManager $objectManager, $entityClass)
     {
-        $this->om = $om;
+        $this->objectManager = $objectManager;
         $this->entityClass = $entityClass;
-        $this->repository = $this->om->getRepository($this->entityClass);
+        $this->repository = $this->objectManager->getRepository($this->entityClass);
     }
 
     /**
-     * Get an Article.
+     * Get an article.
      *
-     * @param mixed $id
+     * @param int $id
      *
-     * @return ArticleInterface
+     * @return Article
+     *
+     * @throws NotFoundHttpException
      */
     public function get($id)
     {
-        return $this->repository->find($id);
+        $article = $this->repository->findOneById($id);
+
+        if (!$article) {
+            throw new NotFoundHttpException();
+        }
+
+        return $article;
+    }
+
+    /**
+     * Get all articles.
+     *
+     * @return array
+     */
+    public function getAll()
+    {
+        return $this->repository->findAll();
+    }
+
+    /**
+     * Adds an article.
+     *
+     * @param Article $article
+     */
+    public function save(Article $article)
+    {
+        $this->objectManager->persist($article);
+        $this->objectManager->flush();
+    }
+
+    /**
+     * Deletes an article.
+     *
+     * @param Article $article
+     */
+    public function delete(Article $article)
+    {
+        $this->objectManager->remove($article);
+        $this->objectManager->flush();
+    }
+
+    /**
+     * Deletes all articles.
+     */
+    public function deleteAll()
+    {
+        $articles = $this->getAll();
+
+        foreach ($articles as $article) {
+            $this->delete($article);
+        }
     }
 }

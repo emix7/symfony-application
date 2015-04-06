@@ -20,7 +20,7 @@ framework:
     trusted_proxies: ~
     session:
         save_path: %session_save_path%
-    fragments:       ~
+    fragments: ~
     http_method_override: true
 
 sensio_framework_extra:
@@ -35,7 +35,7 @@ twig:
         locale_flags: { nl: 'nl', en: 'gb', de: 'de', fr: 'fr' }
     form:
         resources:
-            - 'bootstrap_3_layout.html.twig'
+            - bootstrap_3_layout.html.twig
 
 assetic:
     debug:          %kernel.debug%
@@ -78,6 +78,9 @@ swiftmailer:
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
+    auth_mode: %mailer_auth_mode%
+    port:      %mailer_port%
+    spool: { type: memory }
 
 fos_user:
     db_driver: orm
@@ -92,6 +95,22 @@ sonata_user:
     class:
         user: UserBundle\Entity\User
         group: UserBundle\Entity\Group
+
+hwi_oauth:
+    firewall_name: admin
+    resource_owners:
+        google:
+            type: google
+            client_id: %google_oauth_client_id%
+            client_secret: %google_oauth_client_secret%
+            scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+    fosub:
+        username_iterations: 30
+        properties:
+            google: googleId
+
+user:
+    whitelist: %user_whitelist%
 
 sonata_admin:
     title: Application
@@ -120,6 +139,22 @@ sonata_block:
         sonata.user.block.menu:
         sonata.user.block.account:
         sonata.block.service.text:
+
+ivory_ck_editor:
+    default_config: default
+    configs:
+        default:
+            filebrowserBrowseRoute: admin_media_media_ckeditor_browser
+            filebrowserImageBrowseRoute: admin_media_media_ckeditor_browser
+            filebrowserImageBrowseRouteParameters:
+                provider: sonata.media.provider.image
+            filebrowserUploadRoute: admin_media_media_ckeditor_upload
+            filebrowserUploadRouteParameters:
+                provider: sonata.media.provider.file
+            filebrowserImageUploadRoute: admin_media_media_ckeditor_upload
+            filebrowserImageUploadRouteParameters:
+                provider: sonata.media.provider.image
+                context: default
 
 sonata_media:
     default_context: default
@@ -171,20 +206,6 @@ knp_paginator:
     template:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig
 
-stfalcon_tinymce:
-    include_jquery: false
-    tinymce_jquery: false
-    language: %locale%
-    theme:
-        simple:
-            plugins:
-               - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
-               - "searchreplace wordcount visualblocks visualchars code fullscreen"
-               - "insertdatetime media nonbreaking save table contextmenu directionality"
-               - "emoticons template paste textcolor"
-            menubar: false
-            height: "400px"
-
 jms_i18n_routing:
     default_locale: %locale%
     locales: %locales%
@@ -194,18 +215,21 @@ endroid_google_analytics:
     trackers: %google_analytics_trackers%
 
 fos_rest:
-    param_fetcher_listener: force
+    param_fetcher_listener: true
+    routing_loader:
+        default_format: json
+        include_format: true
     view:
         view_response_listener: force
         formats:
+            xml:  true
             json: true
-            xml: true
         templating_formats:
             html: true
-#    format_listener:
-#        rules:
-#            - { path: ^/api/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension: true }
-#            - { path: ^/, priorities: [ application/javascript, text/css, text/html, */* ], fallback_format: ~, prefer_extension: true }
+    format_listener:
+        rules:
+            - { path: ^/api/, priorities: [ json ], fallback_format: json, prefer_extension: true }
+            - { path: ^/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension: true }
     exception:
         codes:
             Symfony\Component\Routing\Exception\ResourceNotFoundException: 404
@@ -216,7 +240,6 @@ fos_rest:
     access_denied_listener:
         json: true
     body_listener: true
-    disable_csrf_role: ROLE_API
 
 jms_serializer:
     metadata:
@@ -227,17 +250,11 @@ jms_serializer:
             page:
                 namespace_prefix: PageBundle
                 path: "@PageBundle/Resources/config/serializer"
-            user:
-                namespace_prefix: UserBundle
-                path: "@UserBundle/Resources/config/serializer"
 
 nelmio_api_doc:
-    name: Symfony Application API
+    name: API
     sandbox:
         enabled: true
-        authentication:
-            name: access_token
-            delivery: query
 
 fos_oauth_server:
     db_driver:            orm
@@ -286,7 +303,7 @@ snc_redis:
 
 cmf_create:
     security:
-        role: ROLE_USER
+        role: ROLE_ADMIN
         checker_service: ~
     object_mapper_service_id: app.create.object_mapper
     persistence:
@@ -313,6 +330,6 @@ old_sound_rabbit_mq:
             exchange_options: { name: message, type: direct }
             queue_options: { name: message }
             callback: messaging.consumer.message
-
-user:
-    whitelist: %whitelist%
+    
+parameters:
+    sonata.user.admin.user.class: UserBundle\Admin\UserAdmin

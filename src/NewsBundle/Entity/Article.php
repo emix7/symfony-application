@@ -18,13 +18,15 @@ use BehaviorBundle\Model\TimestampableInterface;
 use BehaviorBundle\Model\TimestampableTrait;
 use BehaviorBundle\Model\TranslationInterface;
 use BehaviorBundle\Model\TranslationTrait;
-use NewsBundle\Model\ArticleInterface;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="news_article")
+ *
+ * @Serializer\ExclusionPolicy("all")
  */
-class Article implements ArticleInterface, PublishableInterface, SluggableInterface, TimestampableInterface, TranslationInterface
+class Article implements PublishableInterface, SluggableInterface, TimestampableInterface, TranslationInterface
 {
     use PublishableTrait;
     use SluggableTrait;
@@ -35,11 +37,15 @@ class Article implements ArticleInterface, PublishableInterface, SluggableInterf
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @Serializer\Expose
      */
     protected $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Serializer\Exclude
      */
     protected $title;
 
@@ -62,6 +68,7 @@ class Article implements ArticleInterface, PublishableInterface, SluggableInterf
      * Sets the title.
      *
      * @param $title
+     *
      * @return Article
      */
     public function setTitle($title)
@@ -85,6 +92,7 @@ class Article implements ArticleInterface, PublishableInterface, SluggableInterf
      * Sets the content.
      *
      * @param $content
+     *
      * @return Article
      */
     public function setContent($content)

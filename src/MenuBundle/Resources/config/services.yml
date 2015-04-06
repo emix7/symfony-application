@@ -5,7 +5,7 @@ services:
         calls:
             - [ setContainer, [ @service_container ] ]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Navigatie, label: Menus }
+            - { name: sonata.admin, manager_type: orm, group: Navigation, label: Menus, label_catalogue: messages }
 
     menu.twig.extension:
         class: MenuBundle\Twig\Extension\MenuExtension

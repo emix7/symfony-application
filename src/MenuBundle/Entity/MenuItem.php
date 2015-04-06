@@ -55,6 +55,7 @@ class MenuItem implements SortableInterface, TraversableInterface
      * Sets the route key.
      *
      * @param $routeKey
+     *
      * @return MenuItem
      */
     public function setRouteKey($routeKey)
@@ -78,6 +79,7 @@ class MenuItem implements SortableInterface, TraversableInterface
      * Sets the tag.
      *
      * @param $tag
+     *
      * @return MenuItem
      */
     public function setTag($tag)

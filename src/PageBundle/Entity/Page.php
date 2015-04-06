@@ -18,14 +18,13 @@ use BehaviorBundle\Model\TimestampableInterface;
 use BehaviorBundle\Model\TimestampableTrait;
 use BehaviorBundle\Model\TranslationInterface;
 use BehaviorBundle\Model\TranslationTrait;
-use PageBundle\Model\PageInterface;
 use Netvlies\Bundle\NetvliesFormBundle\Entity\Form;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="page")
  */
-class Page implements PageInterface, PublishableInterface, SluggableInterface, TimestampableInterface, TranslationInterface
+class Page implements PublishableInterface, SluggableInterface, TimestampableInterface, TranslationInterface
 {
     use PublishableTrait;
     use SluggableTrait;
@@ -68,6 +67,7 @@ class Page implements PageInterface, PublishableInterface, SluggableInterface, T
      * Sets the title.
      *
      * @param $title
+     *
      * @return Page
      */
     public function setTitle($title)
@@ -91,6 +91,7 @@ class Page implements PageInterface, PublishableInterface, SluggableInterface, T
      * Sets the content.
      *
      * @param $content
+     *
      * @return Page
      */
     public function setContent($content)
@@ -114,6 +115,7 @@ class Page implements PageInterface, PublishableInterface, SluggableInterface, T
      * Returns the form.
      *
      * @param $form
+     *
      * @return Page
      */
     public function setForm($form)

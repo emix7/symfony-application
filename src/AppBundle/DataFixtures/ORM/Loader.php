@@ -31,6 +31,7 @@ class Loader extends DataFixtureLoader
      * Returns a route to a page.
      *
      * @param $id
+     *
      * @return string
      */
     public function pageRoute($id)

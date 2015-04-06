@@ -58,7 +58,8 @@ class LanguageController extends Controller
     /**
      * Allow for both translations and translatables to be passed as argument.
      *
-     * @param  array $translatables
+     * @param array $translatables
+     *
      * @return array
      */
     protected function replaceTranslations(array $translatables)
@@ -75,7 +76,8 @@ class LanguageController extends Controller
     /**
      * Make sure that the array contains translatables only.
      *
-     * @param  array                $translatables
+     * @param array $translatables
+     *
      * @throws InvalidTypeException
      */
     protected function validateTranslatables(array $translatables)
@@ -91,8 +93,9 @@ class LanguageController extends Controller
      * Translates the translatable parameters defined as a property path.
      *
      * @param $locale
-     * @param  array $params
-     * @param  array $translatables
+     * @param array $params
+     * @param array $translatables
+     *
      * @return array
      */
     protected function translateParameters($locale, array $params = array(), array $translatables = array())

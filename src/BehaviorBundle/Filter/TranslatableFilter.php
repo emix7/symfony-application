@@ -46,6 +46,10 @@ class TranslatableFilter extends SQLFilter implements ContainerAwareInterface
             return;
         }
 
+        if (strpos($this->getRequest()->getPathInfo(), '/api') === 0) {
+            return;
+        }
+
         $filter = $this->getEntityManager()->getFilters()->enable('translatable_filter');
         $filter->setParameter('locale', $this->container->get('request')->getLocale());
     }

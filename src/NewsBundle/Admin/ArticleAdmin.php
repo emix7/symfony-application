@@ -37,12 +37,7 @@ class ArticleAdmin extends BaseAdmin
                 ->add('title')
                 ->add('date', 'date', array('property_path' => 'translatable.date'))
                 ->add('image', 'sonata_type_model', array('required' => false, 'property_path' => 'translatable.image', 'class' => 'MediaBundle\\Entity\\Media'))
-                ->add('content', 'textarea', array(
-                    'attr' => array(
-                        'class' => 'tinymce',
-                    ),
-                )
-            )
+                ->add('content', 'ckeditor', array())
             ->end()
         ;
     }

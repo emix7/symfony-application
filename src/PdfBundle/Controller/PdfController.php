@@ -180,6 +180,7 @@ class PdfController extends Controller
      *
      * @param $itemCount
      * @param $subCount
+     *
      * @return array
      */
     public function getRandomItems($itemCount, $subCount)
@@ -211,6 +212,7 @@ class PdfController extends Controller
      * Generates random content.
      *
      * @param $paragraphCount
+     *
      * @return string
      */
     public function generateRandomContent($paragraphCount)
@@ -243,6 +245,7 @@ class PdfController extends Controller
      * @param $columnCount
      * @param $minRowCount
      * @param $maxRowCount
+     *
      * @return string
      */
     public function generateRandomTable($columnCount, $minRowCount, $maxRowCount)
@@ -278,6 +281,7 @@ class PdfController extends Controller
      * Returns the path where the file is cached.
      *
      * @param $filename
+     *
      * @return string
      */
     public function getPath($filename)
@@ -301,7 +305,8 @@ class PdfController extends Controller
      * Fix relative paths to resources.
      *
      * @param $content
-     * @param  bool  $reverse
+     * @param bool $reverse
+     *
      * @return mixed
      */
     public function fixPaths($content, $reverse = false)
@@ -323,7 +328,8 @@ class PdfController extends Controller
      * Filters the HTML to only show the given IDs.
      *
      * @param $html
-     * @param  array $ids
+     * @param array $ids
+     *
      * @return mixed
      */
     public function addFilters($html, $ids = array())

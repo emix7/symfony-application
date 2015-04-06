@@ -2,13 +2,12 @@
 
 namespace SearchBundle\Features\Context;
 
-use Behat\MinkExtension\Context\MinkContext;
-use Behat\Symfony2Extension\Context\KernelDictionary;
+use AppBundle\Features\Context\FeatureContext as AppFeatureContext;
 
 /**
  * Feature context.
  */
-class FeatureContext extends MinkContext
+class FeatureContext extends AppFeatureContext
 {
     use KernelDictionary;
 }

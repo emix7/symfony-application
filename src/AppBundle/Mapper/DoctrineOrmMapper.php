@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @copyright CONTENT CONTROL GmbH, http://www.contentcontrol-berlin.de
  * @author David Buchmann <david@liip.ch>
  * @license Dual licensed under the MIT (MIT-LICENSE.txt) and LGPL (LGPL-LICENSE.txt) licenses.
- * @package Midgard.CreatePHP
  */
 
 namespace AppBundle\Mapper;
@@ -107,7 +107,7 @@ class DoctrineOrmMapper extends BaseDoctrineRdfMapper
 
     /**
      * Restore the original string from the escaped one. Reverse operation of
-     * self::escape()
+     * self::escape().
      *
      * @param string $string Escaped string
      *
@@ -119,7 +119,7 @@ class DoctrineOrmMapper extends BaseDoctrineRdfMapper
     }
 
     /**
-     * Reorder the children of the collection node according to the expected order
+     * Reorder the children of the collection node according to the expected order.
      *
      * @param EntityInterface     $entity
      * @param CollectionInterface $node

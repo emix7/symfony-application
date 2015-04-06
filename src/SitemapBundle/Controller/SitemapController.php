@@ -46,7 +46,7 @@ class SitemapController extends Controller
         }
 
         return new Response(
-            $this->renderView("SitemapBundle:Sitemap:index.xml.twig", array('urls' => $urls)),
+            $this->renderView('SitemapBundle:Sitemap:index.xml.twig', array('urls' => $urls)),
             200, array('Content-Type' => 'text/xml')
         );
     }

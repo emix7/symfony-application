@@ -31,6 +31,7 @@ trait TranslatableTrait
      * Checks if the entity has a translation.
      *
      * @param $translation
+     *
      * @return bool
      */
     public function hasTranslation(TranslationInterface $translation)
@@ -42,6 +43,7 @@ trait TranslatableTrait
      * Adds a translation.
      *
      * @param $translation
+     *
      * @return TranslatableInterface
      */
     public function addTranslation(TranslationInterface $translation)
@@ -59,6 +61,7 @@ trait TranslatableTrait
      * Returns the translation with the given locale.
      *
      * @param $locale
+     *
      * @return TranslationInterface
      */
     public function getTranslation($locale)

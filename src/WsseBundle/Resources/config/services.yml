@@ -1,0 +1,11 @@
+services:
+    wsse.security.authentication.provider:
+        class: WsseBundle\Security\Authentication\Provider\WsseProvider
+        arguments: [ "", "%kernel.cache_dir%/security/nonces" ]
+
+    wsse.security.authentication.listener:
+        class: WsseBundle\Security\Firewall\WsseListener
+        arguments: [ "@security.token_storage", "@security.authentication.manager" ]
+
+    wsse.header_service:
+        class: WsseBundle\Service\HeaderService

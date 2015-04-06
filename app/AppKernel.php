@@ -26,11 +26,14 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Fp\OpenIdBundle\FpOpenIdBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
@@ -38,7 +41,6 @@ class AppKernel extends Kernel
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Netvlies\Bundle\NetvliesFormBundle\NetvliesFormBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new FOS\ElasticaBundle\FOSElasticaBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
@@ -48,6 +50,7 @@ class AppKernel extends Kernel
             new Snc\RedisBundle\SncRedisBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
+	    new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new Endroid\Bundle\GoogleAnalyticsBundle\EndroidGoogleAnalyticsBundle(),
 
             // Project specific bundles
@@ -66,6 +69,7 @@ class AppKernel extends Kernel
             new SearchBundle\SearchBundle(),
             new SitemapBundle\SitemapBundle(),
             new UserBundle\UserBundle(),
+            new WsseBundle\WsseBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

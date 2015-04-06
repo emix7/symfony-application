@@ -12,10 +12,13 @@ namespace NewsBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use BehaviorBundle\Model\TranslatableInterface;
 use BehaviorBundle\Model\TranslatableTrait;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="news_article_translatable")
+ *
+ * @Serializer\ExclusionPolicy("all")
  */
 class ArticleTranslatable implements TranslatableInterface
 {
@@ -25,11 +28,15 @@ class ArticleTranslatable implements TranslatableInterface
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @Serializer\Expose
      */
     protected $id;
 
     /**
      * @ORM\Column(type="date")
+     *
+     * @Serializer\Exclude
      */
     protected $date;
 
@@ -52,6 +59,7 @@ class ArticleTranslatable implements TranslatableInterface
      * Sets the date.
      *
      * @param $date
+     *
      * @return ArticleTranslatable
      */
     public function setDate($date)
@@ -75,6 +83,7 @@ class ArticleTranslatable implements TranslatableInterface
      * Sets the image.
      *
      * @param $image
+     *
      * @return ArticleTranslatable
      */
     public function setImage($image)

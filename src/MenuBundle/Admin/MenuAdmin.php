@@ -40,9 +40,8 @@ class MenuAdmin extends BaseAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('label', 'string', array('label' => 'Naam', 'template' => 'MenuBundle:MenuItemAdmin:list_field_label.html.twig'))
-            ->add('route', 'string', array('label' => 'Pad', 'template' => 'MenuBundle:MenuItemAdmin:list_field_path.html.twig'))
-            ->add('add', 'string', array('label' => 'Subs', 'template' => 'MenuBundle:MenuItemAdmin:list_field_children.html.twig'))
+            ->addIdentifier('edit', 'string', array('label' => 'Edit', 'template' => 'MenuBundle:MenuItemAdmin:list_field_edit.html.twig'))
+            ->add('path', 'string', array('label' => 'Path', 'template' => 'MenuBundle:MenuItemAdmin:list_field_path.html.twig'))
         ;
 
         parent::configureListFields($listMapper);

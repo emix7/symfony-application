@@ -30,7 +30,8 @@ class Builder extends ContainerAware
      * Returns the menu with the given tag.
      *
      * @param $tag
-     * @param  Request       $request
+     * @param Request $request
+     *
      * @return ItemInterface
      */
     public function createMenu($tag, Request $request)
@@ -70,7 +71,8 @@ class Builder extends ContainerAware
     /**
      * Returns the main menu.
      *
-     * @param  Request       $request
+     * @param Request $request
+     *
      * @return ItemInterface
      */
     public function createMenuMain(Request $request)
@@ -81,7 +83,8 @@ class Builder extends ContainerAware
     /**
      * Returns the footer menu.
      *
-     * @param  Request       $request
+     * @param Request $request
+     *
      * @return ItemInterface
      */
     public function createMenuFooter(Request $request)

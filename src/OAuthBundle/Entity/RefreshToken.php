@@ -30,9 +30,4 @@ class RefreshToken extends BaseRefreshToken
      * @ORM\JoinColumn(nullable=false)
      */
     protected $client;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     */
-    protected $user;
 }

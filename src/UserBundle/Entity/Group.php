@@ -26,9 +26,9 @@ class Group extends BaseGroup
     protected $id;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {

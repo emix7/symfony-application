@@ -9,58 +9,51 @@
 
 namespace OAuthBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use OAuthBundle\Service\ClientService;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CreateClientCommand extends ContainerAwareCommand
+class CreateClientCommand extends Command
 {
     /**
-     * Configures the command.
+     * @var ClientService
+     */
+    protected $clientService;
+
+    /**
+     * {@inheritdoc}
+     *
+     * @param ClientService $clientService
+     */
+    public function __construct(ClientService $clientService)
+    {
+        parent::__construct();
+
+        $this->clientService = $clientService;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     protected function configure()
     {
         $this
-            ->setName('api:client:create')
-            ->setDescription('Creates a new client')
-            ->addOption(
-                'redirect-uri',
-                null,
-                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
-                'Sets redirect uri for client. Use this option multiple times to set multiple redirect URIs.',
-                null
-            )
-            ->addOption(
-                'grant-type',
-                null,
-                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
-                'Sets allowed grant type for client. Use this option multiple times to set multiple grant types..',
-                null
-            )
-            ->setHelp('The <info>%command.name%</info> command creates a new client.');
+            ->setName('oauth:client:create')
+            ->setDescription('Creates a new OAuth client')
+            ->addOption('redirect-uri', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Sets the redirect uri for the client. Use this option multiple times to set multiple redirect URIs.', null)
+            ->addOption('grant-type', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Sets the allowed grant type for the client. Use this option multiple times to set multiple grant types.', null)
+            ->setHelp('The <info>%command.name%</info> command creates a new OAuth client.')
+        ;
     }
 
     /**
-     * Executes the command.
-     *
-     * @param  InputInterface  $input
-     * @param  OutputInterface $output
-     * @return int|null|void
+     * {@inheritdoc}
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $clientManager = $this->getContainer()->get('fos_oauth_server.client_manager.default');
-        $client = $clientManager->createClient();
-        $client->setRedirectUris($input->getOption('redirect-uri'));
-        $client->setAllowedGrantTypes($input->getOption('grant-type'));
-        $clientManager->updateClient($client);
-        $output->writeln(
-            sprintf(
-                "Client ID: <info>%s</info>\nClient secret: <info>%s</info>",
-                $client->getPublicId(),
-                $client->getSecret()
-            )
-        );
+        $client = $this->clientService->create($input->getOption('redirect-uri'), $input->getOption('grant-type'));
+        $output->writeln(sprintf("Client ID: <info>%s</info>\nClient secret: <info>%s</info>", $client->getPublicId(), $client->getSecret()));
     }
 }

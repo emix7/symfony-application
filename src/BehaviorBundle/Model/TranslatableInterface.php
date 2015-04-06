@@ -17,6 +17,7 @@ interface TranslatableInterface
      * Checks if the entity has a translation.
      *
      * @param $translation
+     *
      * @return bool
      */
     public function hasTranslation(TranslationInterface $translation);
@@ -25,6 +26,7 @@ interface TranslatableInterface
      * Adds a translation.
      *
      * @param $translation
+     *
      * @return TranslatableInterface
      */
     public function addTranslation(TranslationInterface $translation);
@@ -33,6 +35,7 @@ interface TranslatableInterface
      * Returns the translation with the given locale.
      *
      * @param $locale
+     *
      * @return TranslationInterface
      */
     public function getTranslation($locale);

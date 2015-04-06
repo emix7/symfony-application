@@ -5,7 +5,7 @@ services:
         calls:
             - [ setContainer, [ @service_container ] ]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Content, label: Pages }
+            - { name: sonata.admin, manager_type: orm, group: Content, label: Pages, label_catalogue: messages }
 
     page.route_provider:
         class: PageBundle\Service\RouteProvider
@@ -13,7 +13,3 @@ services:
             - [ setContainer, [ @service_container ] ]
         tags:
             -  { name: route.provider }
-
-    page.page.handler:
-        class: PageBundle\Handler\PageHandler
-        arguments: [ @doctrine.orm.entity_manager, PageBundle\Entity\Page ]

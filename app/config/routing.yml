@@ -1,43 +1,54 @@
 # Translations of prefixes for multilingual routes can be defined in
 # src/AppBundle/Resources/translations/routes.<lang>.yml
 
-api:
-    resource:   "@ApiBundle/Resources/config/routes.yml"
-    type:       rest
-    prefix:     /api
-    options:    { i18n: false }
+api_rest:
+    resource: "@ApiBundle/Resources/config/routes.yml"
+    type: rest
+    prefix: /api
+    options: { i18n: false }
 
 app:
-    resource:   "@AppBundle/Controller/"
-    type:       annotation
+    resource: "@AppBundle/Controller/"
+    type: annotation
 
 messaging:
-    resource:   "@MessagingBundle/Controller/"
-    type:       annotation
-    prefix:     /messaging
+    resource: "@MessagingBundle/Controller/"
+    type: annotation
+    prefix: /messaging
 
 news:
-    resource:   "@NewsBundle/Controller/"
-    type:       annotation
-    prefix:     /news
+    resource: "@NewsBundle/Controller/"
+    type: annotation
+    prefix: /news
 
 pdf:
-    resource:   "@PdfBundle/Controller/"
-    type:       annotation
-    prefix:     /pdf
+    resource: "@PdfBundle/Controller/"
+    type: annotation
+    prefix: /pdf
 
 NelmioApiDocBundle:
-    resource:   "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:     /apidoc
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix: /apidoc
 
 search:
-    resource:   "@SearchBundle/Controller/"
-    type:       annotation
-    prefix:     /search
+    resource: "@SearchBundle/Controller/"
+    type: annotation
+    prefix: /search
 
 sitemap:
-    resource:   "@SitemapBundle/Controller/"
-    type:       annotation
+    resource: "@SitemapBundle/Controller/"
+    type: annotation
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix: /admin/oauth-connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /admin/oauth-login
+
+google_login:
+    pattern: /admin/oauth-login/check-google
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
@@ -61,14 +72,6 @@ sonata_user_register:
 sonata_user_change_password:
     resource: "@SonataUserBundle/Resources/config/routing/sonata_change_password_1.xml"
     prefix: /profile
-
-sonata_user:
-    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
-    prefix: /admin
-
-fp_openid_security_check:
-    pattern: /admin/login_check_openid
-    defaults: { _controller: FpOpenIdBundle:Security:check }
 
 fos_oauth_server_token:
     resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
@@ -100,5 +103,5 @@ create_image:
     resource: "@CmfCreateBundle/Resources/config/routing/image.xml"
 
 page:
-    resource:   "@PageBundle/Controller/"
-    type:       annotation
+    resource: "@PageBundle/Controller/"
+    type: annotation

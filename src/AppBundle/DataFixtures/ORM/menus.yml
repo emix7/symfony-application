@@ -1,6 +1,9 @@
 MenuBundle\Entity\MenuItem:
+    menu_en:
+        tag: EN
     menu_main_en:
         tag: Main menu
+        parent: @menu_en
     menu_main_company_en:
         tag: Company
         parent: @menu_main_en
@@ -22,6 +25,7 @@ MenuBundle\Entity\MenuItem:
         routeKey: <pageRoute(@page_contact_en->id)>
     menu_footer_en:
         tag: Footer menu
+        parent: @menu_en
     menu_footer_contact_en:
         tag: Contact
         parent: @menu_footer_en
@@ -30,8 +34,11 @@ MenuBundle\Entity\MenuItem:
         tag: Sitemap
         parent: @menu_footer_en
         routeKey: sitemap_sitemap_index
+    menu_nl:
+        tag: NL
     menu_main_nl:
         tag: Hoofdmenu
+        parent: @menu_nl
     menu_main_company_nl:
         tag: Bedrijf
         parent: @menu_main_nl
@@ -53,6 +60,7 @@ MenuBundle\Entity\MenuItem:
         routeKey: <pageRoute(@page_contact_nl->id)>
     menu_footer_nl:
         tag: Footermenu
+        parent: @menu_nl
     menu_footer_contact_nl:
         tag: Contact
         parent: @menu_footer_nl

@@ -12,7 +12,7 @@ namespace UserBundle\Handler;
 interface UserHandlerInterface
 {
     /**
-     * Get a User given the identifier
+     * Get a User given the identifier.
      *
      * @api
      *

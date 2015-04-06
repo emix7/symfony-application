@@ -25,6 +25,7 @@ trait TranslationTrait
      * Sets the locale.
      *
      * @param $locale
+     *
      * @return TranslatableInterface
      */
     public function setLocale($locale)
@@ -48,6 +49,7 @@ trait TranslationTrait
      * Sets the translatable subject.
      *
      * @param $translatable
+     *
      * @return TranslationInterface
      */
     public function setTranslatable(TranslatableInterface $translatable)

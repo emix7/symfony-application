@@ -41,12 +41,9 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <input type="submit" id="_submit" name="_submit" class="btn btn-primary" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"/>
-                                    <span style="float: right; line-height: 10px;">Login with Google&nbsp;&nbsp;<a href="#" onclick="$('#fp_openid_login').submit();" title="Login"><img src="{{ asset('bundles/user/img/google.png') }}" /></a></span>
+                                    <span style="float: right; line-height: 10px;"><a href="{{ path('hwi_oauth_service_redirect', { service: 'google' }) }}" title="Login"><img src="{{ asset('bundles/user/img/google.png') }}" /></a></span>
                                 </div>
                             </div>
-                        </form>
-                        <form id="fp_openid_login" action="{{ path('fp_openid_security_check') }}" method="post" style="display: none;">
-                            <input type="hidden" id="openid_identifier" name="openid_identifier" value="https://www.google.com/accounts/o8/id" />
                         </form>
                     </div>
                 </div>

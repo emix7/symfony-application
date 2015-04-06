@@ -20,11 +20,7 @@ class PageAdmin extends BaseAdmin
         $formMapper
             ->with('General')
                 ->add('title')
-                ->add('content', 'textarea', array(
-                    'attr' => array(
-                        'class' => 'tinymce',
-                    ),
-                ))
+                ->add('content', 'ckeditor', array())
                 ->add('form')
             ->end()
         ;

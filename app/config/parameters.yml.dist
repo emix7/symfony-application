@@ -11,6 +11,8 @@ parameters:
     mailer_host:                127.0.0.1
     mailer_user:                ~
     mailer_password:            ~
+    mailer_auth_mode:           ~
+    mailer_port:                ~
 
     locale:                     en
     locales:                    [en, fr, de, nl]
@@ -19,7 +21,9 @@ parameters:
     wkhtmltopdf_path:           /usr/local/bin/wkhtmltopdf
     wkhtmltoimage_path:         /usr/local/bin/wkhtmltoimage
     google_analytics_trackers:  ~
+    google_oauth_client_id:     ~
+    google_oauth_client_secret: ~
+    user_whitelist:             ~
     search_index:               default
     redis_prefix:               ~
-    whitelist:                  ~
     session_save_path:          /tmp/sessions

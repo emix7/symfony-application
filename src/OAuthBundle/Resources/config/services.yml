@@ -1,0 +1,8 @@
+services:
+    oauth.client_service:
+        class: OAuthBundle\Service\ClientService
+        arguments: [ @fos_oauth_server.client_manager.default ]
+
+    oauth.client_command:
+        class: OAuthBundle\Command\CreateClientCommand
+        arguments: [ @oauth.client_service ]

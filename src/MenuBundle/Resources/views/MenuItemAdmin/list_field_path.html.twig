@@ -2,15 +2,9 @@
 
 {% block field %}
 
-    {% if app.request.query.get('parent') > 0 %}<a href="{{ path(app.request.attributes.get('_route'), { parent: 0 }) }}">{% endif %}
-
-        Menu's
-
-    {% if app.request.query.get('parent') > 0 %}</a>{% endif %}
-
     {% for item in object.path %}
 
-        &nbsp;&gt;&nbsp;
+        {% if loop.index > 1 %}&nbsp;&gt;&nbsp;{% endif %}
 
         {% set route = route(item.routeKey) %}
 

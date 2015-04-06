@@ -4,8 +4,8 @@
 
     {% if app.request.query.get('parent') > 0 and admin.hasRoute('down') and admin.isGranted('DOWN') %}
 
-        <a class="btn sonata-action-element" href="{{ admin.generateUrl('down', { id: object.id }) }}">
-            <i class="icon-arrow-down"></i>
+        <a href="{{ admin.generateUrl('down', { id: object.id }) }}">
+            &darr;
         </a>
 
     {% endif %}

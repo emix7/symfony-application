@@ -43,6 +43,7 @@ class Route
      * Sets the key.
      *
      * @param $key
+     *
      * @return Route
      */
     public function setKey($key)
@@ -66,6 +67,7 @@ class Route
      * Sets the label.
      *
      * @param $label
+     *
      * @return Route
      */
     public function setLabel($label)
@@ -89,6 +91,7 @@ class Route
      * Sets the name.
      *
      * @param $name
+     *
      * @return Route
      */
     public function setName($name)
@@ -112,6 +115,7 @@ class Route
      * Sets the parameters.
      *
      * @param $parameters
+     *
      * @return Route
      */
     public function setParameters($parameters)

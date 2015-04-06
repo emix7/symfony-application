@@ -28,6 +28,7 @@ trait TimestampableTrait
      * Sets the date and time of creation.
      *
      * @param $datetimeCreated
+     *
      * @return mixed
      */
     public function setDatetimeCreated(DateTime $datetimeCreated)
@@ -51,6 +52,7 @@ trait TimestampableTrait
      * Sets the date and time of update.
      *
      * @param $datetimeUpdated
+     *
      * @return mixed
      */
     public function setDatetimeUpdated(DateTime $datetimeUpdated)

@@ -9,8 +9,9 @@
 
 namespace OAuthBundle\Entity;
 
-use FOS\OAuthServerBundle\Entity\AccessToken as BaseAccessToken;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\OAuthServerBundle\Entity\AccessToken as BaseAccessToken;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
@@ -32,7 +33,12 @@ class AccessToken extends BaseAccessToken
     protected $client;
 
     /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * Returns the user.
+     *
+     * @return UserInterface
      */
-    protected $user;
+    public function getUser()
+    {
+        return $this->client->getUser();
+    }
 }

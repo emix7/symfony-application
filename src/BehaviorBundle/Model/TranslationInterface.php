@@ -15,6 +15,7 @@ interface TranslationInterface
      * Sets the locale.
      *
      * @param $locale
+     *
      * @return TranslatableInterface
      */
     public function setLocale($locale);
@@ -30,6 +31,7 @@ interface TranslationInterface
      * Sets the translatable subject.
      *
      * @param $translatable
+     *
      * @return TranslationInterface
      */
     public function setTranslatable(TranslatableInterface $translatable);

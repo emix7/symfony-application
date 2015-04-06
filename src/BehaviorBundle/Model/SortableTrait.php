@@ -22,6 +22,7 @@ trait SortableTrait
      * Sets the position.
      *
      * @param $position
+     *
      * @return mixed
      */
     public function setPosition($position)

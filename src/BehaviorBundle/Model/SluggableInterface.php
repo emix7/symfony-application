@@ -15,6 +15,7 @@ interface SluggableInterface
      * Sets the slug.
      *
      * @param $slug
+     *
      * @return $this
      */
     public function setSlug($slug);

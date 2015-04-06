@@ -59,7 +59,8 @@ class BaseAdmin extends Admin implements ContainerAwareInterface
     /**
      * Creates the query used to retrieve the list.
      *
-     * @param  string              $context
+     * @param string $context
+     *
      * @return ProxyQueryInterface
      */
     public function createQuery($context = 'list')

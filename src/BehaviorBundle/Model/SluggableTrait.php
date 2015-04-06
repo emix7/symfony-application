@@ -20,6 +20,7 @@ trait SluggableTrait
      * Sets the slug.
      *
      * @param $slug
+     *
      * @return SluggableInterface
      */
     public function setSlug($slug)

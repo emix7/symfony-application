@@ -21,8 +21,8 @@ parameters:
     wkhtmltopdf_path:           /usr/local/bin/wkhtmltopdf
     wkhtmltoimage_path:         /usr/local/bin/wkhtmltoimage
     google_analytics_trackers:  ~
-    google_oauth_client_id:     ~
-    google_oauth_client_secret: ~
+    google_oauth_client_id:     client_id
+    google_oauth_client_secret: client_secret
     user_whitelist:             ~
     search_index:               default
     redis_prefix:               ~

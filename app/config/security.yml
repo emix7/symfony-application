@@ -53,11 +53,12 @@ security:
                 login_path: /admin/login
                 use_forward: false
                 check_path: /admin/login_check
-                failure_path: null
+                failure_path: /admin/login
+                default_target_path: /admin/dashboard
             oauth:
                 resource_owners:
-                    google: /admin/oauth-login/check-google
-                login_path: /oauth-login
+                    google: /oauth-login/check-google
+                login_path: /admin/login
                 use_forward: false
                 failure_path: /admin/login
                 default_target_path: /admin/dashboard
@@ -70,9 +71,10 @@ security:
 
     access_control:
         - { path: ^/api/, role: ROLE_API_USER }
+        - { path: ^/admin/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/oauth-connect/google$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }

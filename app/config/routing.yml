@@ -41,14 +41,14 @@ sitemap:
 
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-    prefix: /oauth-connect
+    prefix: /admin/oauth-connect
 
 hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix: /oauth-login
+    prefix: /admin/oauth-login
 
 google_login:
-    pattern: /oauth-login/check-google
+    pattern: /admin/oauth-login/check-google
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'

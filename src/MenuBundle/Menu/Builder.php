@@ -77,7 +77,18 @@ class Builder extends ContainerAware
      */
     public function createMenuMain(Request $request)
     {
-        return $this->createMenu(($this->container->get('request')->getLocale() == 'nl') ? 'Hoofdmenu' : 'Main menu', $request);
+        $locale = $this->container->get('request')->getLocale();
+
+        $tags = array(
+            'nl' => 'Hoofdmenu',
+            'en' => 'Main menu'
+        );
+
+        if (!isset($tags[$locale])) {
+            return $this->factory->createItem('root');
+        }
+
+        return $this->createMenu($tags[$locale], $request);
     }
 
     /**
@@ -89,6 +100,17 @@ class Builder extends ContainerAware
      */
     public function createMenuFooter(Request $request)
     {
-        return $this->createMenu(($this->container->get('request')->getLocale() == 'nl') ? 'Footermenu' : 'Footer menu', $request);
+        $locale = $this->container->get('request')->getLocale();
+
+        $tags = array(
+            'nl' => 'Footermenu',
+            'en' => 'Footer menu'
+        );
+
+        if (!isset($tags[$locale])) {
+            return $this->factory->createItem('root');
+        }
+
+        return $this->createMenu($tags[$locale], $request);
     }
 }
